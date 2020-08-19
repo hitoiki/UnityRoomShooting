@@ -9,9 +9,27 @@ public class TekiGene : MonoBehaviour
     public float spownTime;
     public float spownBure;
     private float timer;
-    void Start()
+
+    public List<GameObject> objPool;
+    GameObject GetObject()
     {
 
+        //ObjPoolとScene上のオブジェクトが連携していない
+        foreach (var obj in objPool)
+        {
+            Debug.Log(obj.name + ";" + obj.activeSelf.ToString());
+            if (obj.activeSelf == false)
+            {
+                Debug.Log("aa");
+                obj.gameObject.SetActive(true);
+                return obj;
+            }
+        }
+
+
+        var newobj = follower[Random.Range(0, follower.Count)];
+        objPool.Add(Instantiate(newobj));
+        return newobj;
     }
 
     // Update is called once per frame
@@ -19,7 +37,9 @@ public class TekiGene : MonoBehaviour
     {
         if (timer >= spownTime)
         {
-            Instantiate(follower[Random.Range(0, follower.Count)], new Vector3(10f, Random.Range(-5f, 5f), 0f), Quaternion.identity);
+            //Instantiate(follower[Random.Range(0, follower.Count)], new Vector3(10f, Random.Range(-5f, 5f), 0f), Quaternion.identity);
+            var newTeki = GetObject();
+            newTeki.transform.position = new Vector3(10f, Random.Range(-5f, 5f), 0f);
             timer -= spownTime;
             timer -= Random.Range(-spownBure, spownBure);
         }

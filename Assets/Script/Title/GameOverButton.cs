@@ -10,6 +10,7 @@ public class GameOverButton : MonoBehaviour
     public void OnClick()
     {
         Debug.Log("押された!");
+        
         SceneManager.LoadScene("TitleScene");
     }
 }

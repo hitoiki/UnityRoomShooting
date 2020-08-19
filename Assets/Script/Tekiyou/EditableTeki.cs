@@ -29,7 +29,8 @@ public class EditableTeki : MonoBehaviour, ITouchable
     public void touchPlayer(Player p)
     {
         Debug.Log("PlayerTouch");
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
         p.hp -= dealDamage;
         p.ammo += dealBullet;
 
@@ -37,7 +38,7 @@ public class EditableTeki : MonoBehaviour, ITouchable
     public void touchBullet()
     {
         Debug.Log("bulletTouch");
-        if (shotDown) Destroy(this.gameObject);
+        if (shotDown) this.gameObject.SetActive(false); //Destroy(this.gameObject);
 
     }
     public void subEffect()

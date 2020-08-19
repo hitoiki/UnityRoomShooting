@@ -1,22 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+public enum Gamemode { title, play, gameover };
 public class GameDealer : MonoBehaviour
 {
 
-    public UIWriter uiWriter;
+    //共有する変数
+    private Gamemode mode;
+    public Gamemode Mode { get { return mode; } }
+    //public UIWriter uiWriter;
 
     private float time;
     public int score;
     public int scoreRate;
 
-    public bool gameover = false;
+    public UIWriter uiWriter;
+
+
+    //データの共有に使うインスタンス
+    private static GameDealer instance;
+
+    //インスタンスを取得できる唯一のプロパティ
+    public static GameDealer Instance
+    {
+        get
+        {
+            //nullチェック
+            if (null == instance)
+            {
+                instance = (GameDealer)FindObjectOfType(typeof(GameDealer));
+                if (null == instance)
+                {
+                    Debug.Log(" DataManager Instance Error ");
+                }
+            }
+            return instance;
+        }
+    }
 
     private void Update()
     {
-        if (!gameover)
+        if (Mode != Gamemode.gameover)
         {
             time += Time.deltaTime;
             if (time >= scoreRate)
@@ -45,11 +70,37 @@ public class GameDealer : MonoBehaviour
 
     public void GameOver()
     {
-        if (!gameover)
+        if (Mode != Gamemode.gameover)
         {
             uiWriter.gameover();
             Debug.Log("gameover");
-            gameover = true;
+            mode = Gamemode.gameover;
         }
     }
+
+    public void GameStart()
+    {
+        if (Mode != Gamemode.play)
+        {
+            mode = Gamemode.play;
+        }
+    }
+    //シーン間でもインスタンスのオブジェクトが1つになるようにする
+    void Awake()
+    {
+        mode = Gamemode.play;
+        GameObject[] obj = GameObject.FindGameObjectsWithTag("GameController");
+        if (1 < obj.Length)
+        {
+            // 既に存在しているなら削除
+            Destroy(gameObject);
+        }
+        else
+        {
+            // シーン遷移では破棄させない
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
+
 }

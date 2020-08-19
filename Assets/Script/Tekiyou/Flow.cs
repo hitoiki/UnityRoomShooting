@@ -5,7 +5,9 @@ using UnityEngine;
 public class Flow : MonoBehaviour
 {
     public float speed;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
+
+    public bool active;
 
     public Vector2 vanish1;
     public Vector2 vanish2;
@@ -21,8 +23,10 @@ public class Flow : MonoBehaviour
     {
         if (rb.position.x < vanish1.x || rb.position.x > vanish2.x || rb.position.y > vanish1.y || rb.position.y < vanish2.y)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
             //Debug.Log(rb.position.y.ToString());
+            this.gameObject.SetActive(false);
         }
+
     }
 }
