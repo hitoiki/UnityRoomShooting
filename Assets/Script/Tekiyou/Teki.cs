@@ -15,10 +15,10 @@ public class Teki : MonoBehaviour, ITouchable
     }
 
 
-    public void touchPlayer(Player p)
+    public void touchPlayer(PlayerState p)
     {
         Debug.Log("PlayerTouch");
-        p.hp -= dealDamage;
+        p.hp.Value -= dealDamage;
     }
     public void touchBullet()
     {

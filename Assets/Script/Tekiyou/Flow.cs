@@ -7,7 +7,6 @@ public class Flow : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
 
-    public bool active;
 
     public Vector2 vanish1;
     public Vector2 vanish2;

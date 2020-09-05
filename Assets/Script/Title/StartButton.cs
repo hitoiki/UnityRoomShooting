@@ -6,11 +6,9 @@ using UnityEngine.SceneManagement;
 public class StartButton : MonoBehaviour
 {
 
-
     public void OnClick()
     {
         Debug.Log("押された!");
-        GameDealer.Instance.GameStart();
         SceneManager.LoadScene("MainScene");
     }
 }

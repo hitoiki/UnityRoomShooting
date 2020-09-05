@@ -17,10 +17,10 @@ public class TekiGene : MonoBehaviour
         //ObjPoolとScene上のオブジェクトが連携していない
         foreach (var obj in objPool)
         {
-            Debug.Log(obj.name + ";" + obj.activeSelf.ToString());
+            //Debug.Log(obj.name + ";" + obj.activeSelf.ToString());
             if (obj.activeSelf == false)
             {
-                Debug.Log("aa");
+                //Debug.Log("aa");
                 obj.gameObject.SetActive(true);
                 return obj;
             }

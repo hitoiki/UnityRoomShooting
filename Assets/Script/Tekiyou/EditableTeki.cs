@@ -26,24 +26,24 @@ public class EditableTeki : MonoBehaviour, ITouchable
 
     // Update is called once per frame
 
-    public void touchPlayer(Player p)
+    public void touchPlayer(PlayerState p)
     {
-        Debug.Log("PlayerTouch");
+        //Debug.Log("PlayerTouch");
         //Destroy(this.gameObject);
         this.gameObject.SetActive(false);
-        p.hp -= dealDamage;
-        p.ammo += dealBullet;
+        p.hp.Value -= dealDamage;
+        p.ammo.Value += dealBullet;
 
     }
     public void touchBullet()
     {
-        Debug.Log("bulletTouch");
+        //Debug.Log("bulletTouch");
         if (shotDown) this.gameObject.SetActive(false); //Destroy(this.gameObject);
 
     }
     public void subEffect()
     {
-        Debug.Log("subed");
+        //Debug.Log("subed");
     }
 
 }

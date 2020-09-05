@@ -5,7 +5,7 @@ using UnityEngine;
 public class Wall : MonoBehaviour, ITouchable
 {
     // Start is called before the first frame update
-    public void touchPlayer(Player p)
+    public void touchPlayer(PlayerState p)
     {
     }
     public void touchBullet()

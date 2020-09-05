@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UniRx;
 
 public class UIWriter : MonoBehaviour
 {
@@ -9,22 +10,11 @@ public class UIWriter : MonoBehaviour
     public Text scoreText;
     public GameObject gameoverScreen;
 
+    public GameDataLog datalog;
 
-    public void Write(int s, string x)
+    private void Start()
     {
-        switch (x)
-        {
-            case "Hp":
-                hpText.text = "HP" + s.ToString();
-                break;
-            case "Score":
-                scoreText.text = "Score " + s.ToString();
-                break;
-            default: break;
-        }
-    }
-    public void gameover()
-    {
-        gameoverScreen.SetActive(true);
+        datalog.score.Subscribe(x => { scoreText.text = "Score " + x.ToString(); });
+        datalog.state.hp.Subscribe(x => { hpText.text = "HP " + x.ToString(); });
     }
 }
