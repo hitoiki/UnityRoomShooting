@@ -16,5 +16,6 @@ public class UIWriter : MonoBehaviour
     {
         datalog.score.Subscribe(x => { scoreText.text = "Score " + x.ToString(); });
         datalog.state.hp.Subscribe(x => { hpText.text = "HP " + x.ToString(); });
+        datalog.nowGameMode.Subscribe(x => { if (x == GameDataLog.GameMode.gameover) gameoverScreen.SetActive(true); });
     }
 }

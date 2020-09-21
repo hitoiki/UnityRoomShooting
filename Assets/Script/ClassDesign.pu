@@ -1,0 +1,51 @@
+@startuml クラス図
+
+
+package Player{
+class PlayerState{
++bullet
++hp
++ammo
++speed
+}
+
+class PLMove
+class PLtouch
+
+interface IKeyPad
+class KeyPad
+
+KeyPad --o IKeyPad
+IKeyPad <- PLMove : ob
+PlayerState <.. PLMove : ob,write
+PlayerState <.. PLtouch : write
+}
+
+interface Itouchable
+Itouchable .> PLtouch : 接触処理
+
+package bullet{
+    class bulletTouch
+    Itouchable <|.Up. bulletTouch 
+}
+
+package Enemy{
+    class EnemyTouch
+    class EnemyMover
+    class Enemy
+
+    Enemy *-- EnemyMover
+    Enemy *-- EnemyTouch
+    Itouchable <|. EnemyTouch
+}
+
+package GameDealer{
+    class datalog
+    class UIWriter
+
+    PlayerState <- datalog : ob
+    datalog <- UIWriter : ob
+
+}
+
+@enduml

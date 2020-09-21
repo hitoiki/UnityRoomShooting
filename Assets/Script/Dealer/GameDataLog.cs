@@ -13,11 +13,15 @@ public class GameDataLog : MonoBehaviour
     private float timer;
 
 
+    public enum GameMode { play, gameover, menu };
+    public ReactiveProperty<GameMode> nowGameMode = new ReactiveProperty<GameMode>();
+
 
     private void Start()
     {
         //state.hp.Subscribe(x => {})
         score.Value = 0;
+        nowGameMode.Value = GameMode.play;
     }
 
     private void Update()
@@ -30,9 +34,12 @@ public class GameDataLog : MonoBehaviour
             timer -= scoreRate;
         }
 
-        if (state.hp.Value <= 0)
+        if (state.hp.Value <= 0 && nowGameMode.Value != GameMode.gameover)
         {
             /*ゲームオーバー状態を示す*/
+            nowGameMode.Value = GameMode.gameover;
+
+
         }
 
     }

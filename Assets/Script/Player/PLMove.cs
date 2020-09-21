@@ -27,7 +27,7 @@ public class PLMove : MonoBehaviour
         });
         keypad.Shot.Subscribe(boo =>
         {
-            if (boo)
+            if (boo && state.hp.Value > 0)
             {
                 /*ここにbulletの具現化処理*/
                 Bullet shootBullet = magazine.GetMob(playerRb.position);
@@ -37,6 +37,6 @@ public class PLMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerRb.velocity = latestInput;
+        if (state.hp.Value > 0) playerRb.velocity = latestInput;
     }
 }
