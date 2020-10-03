@@ -32,6 +32,10 @@ public class PLMove : MonoBehaviour
                 /*ここにbulletの具現化処理*/
                 state.ammo.Value -= 1;
                 Bullet shootBullet = magazine.GetMob(playerRb.position);
+                Debug.Log("instantiate");
+                shootBullet.Init();
+                shootBullet.rb.angularVelocity = -100f;
+                Debug.Log("go shoot");
             }
         });
     }

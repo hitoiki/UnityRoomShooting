@@ -12,6 +12,8 @@ public class ObjectFlyer<T> where T : Component
     public T DealMob;
     private List<T> MobList;
 
+    public delegate void Init(T t);
+
     public ObjectFlyer(T mob)
     {
         DealMob = mob;
