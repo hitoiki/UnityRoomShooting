@@ -14,12 +14,13 @@ public class EditableTeki : MonoBehaviour, ITouchable
         子クラスに実装するのでなく、参照だけ持たせる事
     */
     Rigidbody2D rb;
-
     public SparkEffecter sparker;
-
+    public GameDataLog DataLog;
+    public int id;
 
     public int dealDamage = 0;
     public int dealBullet = 0;
+    public int dealScore = 0;
     public bool shotDown;
     void Start()
     {
@@ -41,6 +42,7 @@ public class EditableTeki : MonoBehaviour, ITouchable
     public void touchBullet()
     {
         //Debug.Log("bulletTouch");
+        if (DataLog != null) DataLog.score.Value += dealScore;
         if (sparker != null) sparker.Scatt(rb.position);
         if (shotDown) this.gameObject.SetActive(false); //Destroy(this.gameObject);
 

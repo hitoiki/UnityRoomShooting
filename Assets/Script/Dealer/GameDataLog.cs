@@ -10,6 +10,7 @@ public class GameDataLog : MonoBehaviour
     public ReactiveProperty<int> score = new ReactiveProperty<int>();
 
     public float scoreRate;
+
     private float timer;
 
 
@@ -28,7 +29,7 @@ public class GameDataLog : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= scoreRate)
+        if (timer >= scoreRate && scoreRate > 0)
         {
             score.Value += 1;
             timer -= scoreRate;

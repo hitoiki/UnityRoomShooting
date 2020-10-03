@@ -410,16 +410,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   follower:
-  - {fileID: 1992709963988572733, guid: 0d6045d25063bb142b50798f7dd1705e, type: 3}
+  - {fileID: 6951320177529909011, guid: 24223a44d23b025448cb129fb96b21a7, type: 3}
   - {fileID: 3135406709385846283, guid: 6a82a004cf5e6194b82300fc64dfde89, type: 3}
   - {fileID: 2242717202372118514, guid: 85d17dcaf8d22294cbfd2b487ae96c31, type: 3}
   - {fileID: 5293580629072153122, guid: d609e4946b4bfe0438590475a000430d, type: 3}
   - {fileID: 7173166928467647244, guid: 69f252defaa98a54ba596dee8eb484fe, type: 3}
-  - {fileID: 4329917618599230283, guid: 4466f5481e4102b4a8ae72689319fb13, type: 3}
   spownTime: 0.7
   spownBure: 0.5
   effecter: {fileID: 1944937795}
-  objPool: []
+  dataLog: {fileID: 1086017497}
+  objPool:
+  - {fileID: 2242717202372118514, guid: 85d17dcaf8d22294cbfd2b487ae96c31, type: 3}
 --- !u!1 &766241323
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,8 +534,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sethp: 5
-  Setammo: 0
-  Setspeed: 4
+  Setammo: 7
+  Setspeed: 7
   rb: {fileID: 905169540}
   bullet: {fileID: 8706917171312190242, guid: 36f4e3e7076f43a42a1f32d61e15c633, type: 3}
 --- !u!114 &905169537
@@ -719,7 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: {fileID: 905169536}
-  scoreRate: 1
+  scoreRate: 0
 --- !u!4 &1086017498
 Transform:
   m_ObjectHideFlags: 0
@@ -2010,8 +2011,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spark: {fileID: 5300766366808896114, guid: 375e395981d6a0b438530ea103b4f3fb, type: 3}
   power: 10
-  amount: 5
-  bure: 1
+  maxAmount: 10
+  minAmount: 1
 --- !u!1 &2062939412
 GameObject:
   m_ObjectHideFlags: 0

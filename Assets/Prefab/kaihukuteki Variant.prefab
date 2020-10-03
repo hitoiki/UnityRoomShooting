@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: dealDamage
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 1992709963988572733, guid: 0d6045d25063bb142b50798f7dd1705e,
+        type: 3}
+      propertyPath: dealScore
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2437016579802357018, guid: 0d6045d25063bb142b50798f7dd1705e,
         type: 3}
       propertyPath: m_Text

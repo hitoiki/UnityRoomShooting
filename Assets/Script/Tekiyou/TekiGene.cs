@@ -12,11 +12,12 @@ public class TekiGene : MonoBehaviour
 
     public SparkEffecter effecter;
 
+    public GameDataLog dataLog;
+
     public List<EditableTeki> objPool;
     EditableTeki GetObject()
     {
 
-        //ObjPoolとScene上のオブジェクトが連携していない
         foreach (var obj in objPool)
         {
             //Debug.Log(obj.name + ";" + obj.activeSelf.ToString());
@@ -28,8 +29,9 @@ public class TekiGene : MonoBehaviour
             }
         }
 
-
         EditableTeki newobj = follower[Random.Range(0, follower.Count)];
+        newobj.DataLog = dataLog;
+        newobj.sparker = effecter;
         objPool.Add(Instantiate(newobj));
         return newobj;
     }
@@ -41,7 +43,7 @@ public class TekiGene : MonoBehaviour
         {
             //Instantiate(follower[Random.Range(0, follower.Count)], new Vector3(10f, Random.Range(-5f, 5f), 0f), Quaternion.identity);
             var newTeki = GetObject();
-            newTeki.sparker = effecter;
+
             newTeki.transform.position = new Vector3(10f, Random.Range(-5f, 5f), 0f);
             timer -= spownTime;
             timer -= Random.Range(-spownBure, spownBure);
