@@ -7,6 +7,7 @@ using UniRx;
 public class UIWriter : MonoBehaviour
 {
     public Text hpText;
+    public Text ammoText;
     public Text scoreText;
     public GameObject gameoverScreen;
 
@@ -16,6 +17,7 @@ public class UIWriter : MonoBehaviour
     {
         datalog.score.Subscribe(x => { scoreText.text = "Score " + x.ToString(); });
         datalog.state.hp.Subscribe(x => { hpText.text = "HP " + x.ToString(); });
+        datalog.state.ammo.Subscribe(x => { ammoText.text = "Ammo " + x.ToString(); });
         datalog.nowGameMode.Subscribe(x => { if (x == GameDataLog.GameMode.gameover) gameoverScreen.SetActive(true); });
     }
 }

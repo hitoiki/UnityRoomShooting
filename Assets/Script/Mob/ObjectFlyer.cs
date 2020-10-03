@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ObjectFlyer<T> where T : MonoBehaviour
+public class ObjectFlyer<T> where T : Component
 {
     //一種類毎に扱う感じ
     //コイツを介してObject生成をする事で、処理が軽くなる魔法のコード

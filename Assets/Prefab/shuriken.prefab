@@ -144,7 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17260c6769a8af489edff7cbaf4ed33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -3
+  speed: -7
+  rb: {fileID: 0}
   vanish1: {x: -10, y: 10}
   vanish2: {x: 20, y: -10}
 --- !u!114 &8706917171312190242

@@ -15,6 +15,9 @@ public class EditableTeki : MonoBehaviour, ITouchable
     */
     Rigidbody2D rb;
 
+    public SparkEffecter sparker;
+
+
     public int dealDamage = 0;
     public int dealBullet = 0;
     public bool shotDown;
@@ -38,6 +41,7 @@ public class EditableTeki : MonoBehaviour, ITouchable
     public void touchBullet()
     {
         //Debug.Log("bulletTouch");
+        if (sparker != null) sparker.Scatt(rb.position);
         if (shotDown) this.gameObject.SetActive(false); //Destroy(this.gameObject);
 
     }

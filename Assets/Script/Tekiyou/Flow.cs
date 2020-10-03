@@ -16,7 +16,7 @@ public class Flow : MonoBehaviour
     }
     void FixedUpdate()
     {
-        rb.velocity = Vector2.left * speed;
+        if (speed != 0) rb.velocity = Vector2.left * speed;
     }
     private void Update()
     {

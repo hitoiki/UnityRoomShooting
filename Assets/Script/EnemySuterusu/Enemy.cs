@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Dealable : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
+    public ITouchable Enemytouch;
+
 
 }

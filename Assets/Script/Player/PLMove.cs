@@ -27,9 +27,10 @@ public class PLMove : MonoBehaviour
         });
         keypad.Shot.Subscribe(boo =>
         {
-            if (boo && state.hp.Value > 0)
+            if (boo && state.hp.Value > 0 && state.ammo.Value > 0)
             {
                 /*ここにbulletの具現化処理*/
+                state.ammo.Value -= 1;
                 Bullet shootBullet = magazine.GetMob(playerRb.position);
             }
         });
