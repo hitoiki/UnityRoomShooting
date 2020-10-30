@@ -32,7 +32,6 @@ public class PLMove : MonoBehaviour
                 /*ここにbulletの具現化処理*/
                 state.UseAmmo(1);
                 Bullet shootBullet = magazine.GetMob(playerRb.position, x => { x.Init(); x.rb.angularVelocity = -100f; }, x => { x.rb.angularVelocity = -100f; });
-
                 Debug.Log("go shoot");
             }
         });

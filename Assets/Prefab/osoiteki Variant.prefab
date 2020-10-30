@@ -16,7 +16,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 2.5657105
+=======
+      value: -0.91445255
+>>>>>>> a59a18d28d1c64248a16e781b08118a6a3dfba5d
 =======
       value: -0.91445255
 >>>>>>> a59a18d28d1c64248a16e781b08118a6a3dfba5d
