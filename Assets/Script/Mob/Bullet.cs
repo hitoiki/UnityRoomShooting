@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
 
     public Rigidbody2D rb;
-    private void Start()
+    public void Init()
     {
         rb = this.GetComponent<Rigidbody2D>();
     }

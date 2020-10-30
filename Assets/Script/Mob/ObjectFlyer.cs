@@ -12,6 +12,8 @@ public class ObjectFlyer<T> where T : Component
     public T DealMob;
     private List<T> MobList;
 
+    public delegate void GeneTask(T t);
+
     public ObjectFlyer(T mob)
     {
         DealMob = mob;
@@ -36,6 +38,48 @@ public class ObjectFlyer<T> where T : Component
 
         var newMob = DealMob;
         MobList.Add(MonoBehaviour.Instantiate(newMob, pos, Quaternion.identity));
+        return newMob;
+    }
+
+    public T GetMob(Vector3 pos, GeneTask init)
+    {
+        foreach (var obj in MobList)
+        {
+            //Debug.Log(obj.name + ";" + obj.gameObject.activeSelf.ToString());
+            if (obj.gameObject.activeSelf == false)
+            {
+                //Debug.Log("aa");
+                obj.transform.position = pos;
+                obj.gameObject.SetActive(true);
+
+                return obj;
+            }
+        }
+
+        var newMob = MonoBehaviour.Instantiate(DealMob, pos, Quaternion.identity);
+        init(newMob);
+        MobList.Add(newMob);
+        return newMob;
+    }
+
+    public T GetMob(Vector3 pos, GeneTask init, GeneTask calling)
+    {
+        foreach (var obj in MobList)
+        {
+            //Debug.Log(obj.name + ";" + obj.gameObject.activeSelf.ToString());
+            if (obj.gameObject.activeSelf == false)
+            {
+                //Debug.Log("aa");
+                obj.transform.position = pos;
+                obj.gameObject.SetActive(true);
+                calling(obj);
+                return obj;
+            }
+        }
+
+        var newMob = MonoBehaviour.Instantiate(DealMob, pos, Quaternion.identity);
+        init(newMob);
+        MobList.Add(newMob);
         return newMob;
     }
 }

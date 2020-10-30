@@ -20,6 +20,8 @@ ScriptsOnlyBuild:
     - Wave
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -1084,4 +1086,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/TitleScene.unity
   - Assets/Scenes/protoshooting.unity
-  playerPath: "C:/Users/lifik/OneDrive/\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7/UnityProtoShooting"
+  playerPath: C:/Users/lifik/iroiro/Shooting3

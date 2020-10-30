@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{b06d6e48-6111-f0ff-a047-5605d3ddee2f}</ProjectGuid>
+    <ProjectGuid>{486ba735-6d45-ccce-1487-08ef182a505b}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -36,33 +36,34 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\Dangeon\DangeonGene.cs" />
-     <Compile Include="Assets\Script\Dangeon\Wall.cs" />
      <Compile Include="Assets\Script\Dealer\GameDataLog.cs" />
      <Compile Include="Assets\Script\Dealer\TimeDealer.cs" />
      <Compile Include="Assets\Script\Dealer\UIWriter.cs" />
-     <Compile Include="Assets\Script\EnemySuterusu\Enemy.cs" />
-     <Compile Include="Assets\Script\EnemySuterusu\EnemyMover.cs" />
-     <Compile Include="Assets\Script\EnemySuterusu\Report.cs" />
      <Compile Include="Assets\Script\InterFace\ITouchable.cs" />
      <Compile Include="Assets\Script\Mob\Bullet.cs" />
+     <Compile Include="Assets\Script\Mob\DropItem.cs" />
      <Compile Include="Assets\Script\Mob\ObjectFlyer.cs" />
+     <Compile Include="Assets\Script\Mob\Tekiyou\EditableTeki.cs" />
+     <Compile Include="Assets\Script\Mob\Tekiyou\Flow.cs" />
+     <Compile Include="Assets\Script\Mob\Tekiyou\NewTeki\NewTeki.cs" />
+     <Compile Include="Assets\Script\Mob\Tekiyou\SparkEffecter.cs" />
+     <Compile Include="Assets\Script\Mob\Tekiyou\Teki.cs" />
+     <Compile Include="Assets\Script\Mob\Tekiyou\TekiGene.cs" />
+     <Compile Include="Assets\Script\Mob\Tekiyou\Wave.cs" />
      <Compile Include="Assets\Script\Player\IKeyPad.cs" />
      <Compile Include="Assets\Script\Player\Keyboard.cs" />
      <Compile Include="Assets\Script\Player\PLMove.cs" />
      <Compile Include="Assets\Script\Player\PLTouch.cs" />
      <Compile Include="Assets\Script\Player\PlayerState.cs" />
-     <Compile Include="Assets\Script\Tekiyou\EditableTeki.cs" />
-     <Compile Include="Assets\Script\Tekiyou\Flow.cs" />
-     <Compile Include="Assets\Script\Tekiyou\NewTeki\NewTeki.cs" />
-     <Compile Include="Assets\Script\Tekiyou\SparkEffecter.cs" />
-     <Compile Include="Assets\Script\Tekiyou\Teki.cs" />
-     <Compile Include="Assets\Script\Tekiyou\TekiGene.cs" />
-     <Compile Include="Assets\Script\Tekiyou\Wave.cs" />
      <Compile Include="Assets\Script\TestTime.cs" />
      <Compile Include="Assets\Script\Title\GameOverButton.cs" />
      <Compile Include="Assets\Script\Title\StartButton.cs" />
      <Compile Include="Assets\Script\Title\TitleDealer.cs" />
+     <Compile Include="Assets\Script\botunoyatu\Dangeon\DangeonGene.cs" />
+     <Compile Include="Assets\Script\botunoyatu\Dangeon\Wall.cs" />
+     <Compile Include="Assets\Script\botunoyatu\EnemySuterusu\Enemy.cs" />
+     <Compile Include="Assets\Script\botunoyatu\EnemySuterusu\EnemyMover.cs" />
+     <Compile Include="Assets\Script\botunoyatu\EnemySuterusu\Report.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -241,13 +242,13 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.10f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -604,51 +605,51 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Monetization">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/UnityRoomNoShooting/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+        <HintPath>C:/Users/lifik/Github/UnityRoomShooting/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UniRx.csproj">
-      <Project>{0895c47d-84a9-0710-2243-ab9a274f1c42}</Project>
+      <Project>{d1bd3df5-81ed-dc9c-d663-100329a22d11}</Project>
       <Name>UniRx</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

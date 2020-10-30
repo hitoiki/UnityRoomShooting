@@ -27,17 +27,19 @@ public class PLMove : MonoBehaviour
         });
         keypad.Shot.Subscribe(boo =>
         {
-            if (boo && state.hp.Value > 0 && state.ammo.Value != 0)
+            if (boo && !state.IsDead && state.ammo.Value != 0)
             {
                 /*ここにbulletの具現化処理*/
-                state.ammo.Value -= 1;
-                Bullet shootBullet = magazine.GetMob(playerRb.position);
+                state.UseAmmo(1);
+                Bullet shootBullet = magazine.GetMob(playerRb.position, x => { x.Init(); x.rb.angularVelocity = -100f; }, x => { x.rb.angularVelocity = -100f; });
+
+                Debug.Log("go shoot");
             }
         });
     }
 
     private void FixedUpdate()
     {
-        if (state.hp.Value > 0) playerRb.velocity = latestInput;
+        if (!state.IsDead) playerRb.velocity = latestInput;
     }
 }

@@ -10,6 +10,7 @@ public class Keyboard : IKeyPad
     public override void KeyPadUpdate()
     {
         Shot.Value = Input.GetKeyDown(KeyCode.Z);
+        Take.Value = Input.GetKeyDown(KeyCode.X);
         Vector2 recept = Vector2.zero;
 
         if (Input.GetKey(KeyCode.UpArrow)) recept += Vector2.up;

@@ -170,6 +170,7 @@ MonoBehaviour:
   - {fileID: 2242717202372118514, guid: 85d17dcaf8d22294cbfd2b487ae96c31, type: 3}
   - {fileID: 5293580629072153122, guid: d609e4946b4bfe0438590475a000430d, type: 3}
   - {fileID: 7173166928467647244, guid: 69f252defaa98a54ba596dee8eb484fe, type: 3}
+  - {fileID: 4329917618599230283, guid: 4466f5481e4102b4a8ae72689319fb13, type: 3}
   spownTime: 0.5
   spownBure: 0.5
   effecter: {fileID: 1683106069}
@@ -1675,8 +1676,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sethp: 5
-  Setammo: 7
+  Setammo: 99999
   Setspeed: 7
+  IsDead: 0
   rb: {fileID: 1898797583}
   bullet: {fileID: 8706917171312190242, guid: 36f4e3e7076f43a42a1f32d61e15c633, type: 3}
 --- !u!114 &1898797580

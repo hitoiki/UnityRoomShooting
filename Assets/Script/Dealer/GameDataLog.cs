@@ -6,7 +6,6 @@ using UniRx;
 public class GameDataLog : MonoBehaviour
 {
     public PlayerState state;
-
     public ReactiveProperty<int> score = new ReactiveProperty<int>();
 
     public float scoreRate;
@@ -35,7 +34,7 @@ public class GameDataLog : MonoBehaviour
             timer -= scoreRate;
         }
 
-        if (state.hp.Value <= 0 && nowGameMode.Value != GameMode.gameover)
+        if (state.IsDead && nowGameMode.Value != GameMode.gameover)
         {
             /*ゲームオーバー状態を示す*/
             nowGameMode.Value = GameMode.gameover;
