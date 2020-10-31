@@ -6,7 +6,7 @@ using UniRx;
 public abstract class IKeyPad : MonoBehaviour
 {
     public ReactiveProperty<bool> Shot { get; set; } = new ReactiveProperty<bool>();
-    public ReactiveProperty<bool> Take { get; set; } = new ReactiveProperty<bool>();
+    public ReactiveProperty<bool> Action { get; set; } = new ReactiveProperty<bool>();
 
     public ReactiveProperty<Vector2> InputVector { get; set; } = new ReactiveProperty<Vector2>();
 

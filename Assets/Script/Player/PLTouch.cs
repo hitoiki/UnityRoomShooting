@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
+using System.Linq;
 
 public class PLTouch : MonoBehaviour
 {
@@ -17,7 +19,6 @@ public class PLTouch : MonoBehaviour
         if (touchable != null)
         {
             touchable.touchPlayer(state);
-            touchable.subEffect();
         }
     }
 }

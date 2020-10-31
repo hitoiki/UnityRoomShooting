@@ -47,9 +47,5 @@ public class EditableTeki : MonoBehaviour, ITouchable
         if (shotDown) this.gameObject.SetActive(false); //Destroy(this.gameObject);
 
     }
-    public void subEffect()
-    {
-        //Debug.Log("subed");
-    }
 
 }

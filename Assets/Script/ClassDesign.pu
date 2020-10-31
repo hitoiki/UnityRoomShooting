@@ -3,7 +3,7 @@
 
 package Player{
 class PlayerState{
-+bullet
++weapon
 +hp
 +ammo
 +speed
@@ -24,10 +24,18 @@ PlayerState <.. PLtouch : write
 interface Itouchable
 Itouchable .> PLtouch : 接触処理
 
-package bullet{
+package weapon{
+    class weapon{
+    +bullet
+    +MaxAmmo
+    }
+    package bullet{
     class bulletTouch
     Itouchable <|.Up. bulletTouch 
 }
+}
+
+
 
 package Enemy{
     class EnemyTouch
