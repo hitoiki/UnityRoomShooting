@@ -46,3 +46,4 @@ MonoBehaviour:
   weaponName: shuriken
   bullet: {fileID: 8706917171312190242, guid: 36f4e3e7076f43a42a1f32d61e15c633, type: 3}
   MaxAmmo: 0
+  shotInterval: 0.5

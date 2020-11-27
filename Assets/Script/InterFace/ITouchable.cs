@@ -6,6 +6,6 @@ public interface ITouchable
 {
     //自機、弾が触れられるものを示すインターフェース
     void touchPlayer(PlayerState p);
-    void touchBullet();
+    void touchBullet(Bullet b);
 
 }

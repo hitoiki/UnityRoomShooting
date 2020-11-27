@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SimpleBullet : Bullet
 {
+
     public override void Init()
     {
         rb = this.GetComponent<Rigidbody2D>();

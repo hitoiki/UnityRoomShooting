@@ -2339,6 +2339,7 @@ MonoBehaviour:
   weaponName: corn
   bullet: {fileID: 7693386788568754147, guid: 87ffad8cb8792d84db4d76cfeb033087, type: 3}
   MaxAmmo: 0
+  shotInterval: 0.1
 --- !u!114 &4894782874785253560
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class Teki : MonoBehaviour, ITouchable
         Debug.Log("PlayerTouch");
         //p.hp -= dealDamage;
     }
-    public void touchBullet()
+    public void touchBullet(Bullet b)
     {
         Debug.Log("bulletTouch");
     }

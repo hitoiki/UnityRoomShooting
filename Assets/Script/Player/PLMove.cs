@@ -10,10 +10,11 @@ public class PLMove : MonoBehaviour
 
     [SerializeField] private IKeyPad keypad;
     [SerializeField] private Rigidbody2D playerRb;
-
     [SerializeField] private PlayerState state;
 
     private Vector2 latestInput;
+    private bool shotable;
+    private float cooltime;
     private ObjectFlyer<Bullet> magazine;
     private void Awake()
     {
@@ -26,19 +27,13 @@ public class PLMove : MonoBehaviour
         {
             latestInput = x * state.speed.Value;
         });
+        //弾丸を撃つ処理…の許可を出す処理
+        //今までの流れからだとこうなるやん？
         keypad.Shot.Subscribe(boo =>
         {
-            if (boo && !state.IsDead && state.ammo.Value != 0)
-            {
-                /*ここにbulletの具現化処理*/
-                state.UseAmmo(1);
-                Bullet shootBullet = magazine.GetMob(
-                    playerRb.position,
-                    x => { x.Init(); x.shoot(keypad.AimDirection.Value); x.rb.angularVelocity = -100f; },
-                    x => { x.shoot(keypad.AimDirection.Value); x.rb.angularVelocity = -100f; });
-                Debug.Log("go shoot");
-            }
+            shotable = boo;
         });
+
         //方向転換
         keypad.AimDirection.Subscribe(x =>
         {
@@ -58,8 +53,32 @@ public class PLMove : MonoBehaviour
         state.weapon.Subscribe(weapon =>
         {
             magazine = new ObjectFlyer<Bullet>(state.weapon.Value.bullet);
+            cooltime = state.weapon.Value.shotInterval;
         }
         );
+    }
+
+    private void Update()
+    {
+        //ボタンを押している間は撃つ、なのでこのような処理に
+        //一応外のブールを介してkeypadへのアクセス回数を減らしてはいる 
+        //…冗長になってきたなぁ
+        if (cooltime > 0) cooltime -= Time.deltaTime;
+        else
+        {
+            if (shotable && !state.IsDead && state.ammo.Value != 0)
+            {
+                /*ここにbulletの具現化処理*/
+                state.UseAmmo(1);
+                cooltime = cooltime = state.weapon.Value.shotInterval;
+                Bullet shootBullet = magazine.GetMob(
+                    playerRb.position,
+                    x => { x.Init(); x.shoot(keypad.AimDirection.Value); /*x.rb.angularVelocity = -100f;*/ },
+                    x => { x.shoot(keypad.AimDirection.Value); /*x.rb.angularVelocity = -100f*/; });
+                Debug.Log("go shoot");
+                cooltime = state.weapon.Value.shotInterval;
+            }
+        }
     }
 
     private void FixedUpdate()

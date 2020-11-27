@@ -39,7 +39,7 @@ public class EditableTeki : MonoBehaviour, ITouchable
         p.UseAmmo(-dealBullet);
 
     }
-    public void touchBullet()
+    public void touchBullet(Bullet b)
     {
         //Debug.Log("bulletTouch");
         if (DataLog != null) DataLog.score.Value += dealScore;

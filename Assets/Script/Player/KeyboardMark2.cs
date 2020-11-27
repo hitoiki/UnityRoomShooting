@@ -6,7 +6,7 @@ public class KeyboardMark2 : IKeyPad
 {
     public override void KeyPadUpdate()
     {
-        Shot.Value = Input.GetMouseButtonDown(0);
+        Shot.Value = Input.GetMouseButton(0);
         Action.Value = Input.GetMouseButtonDown(1);
         Vector2 recept = Vector2.zero;
 

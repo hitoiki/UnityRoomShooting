@@ -7,6 +7,7 @@ public abstract class Bullet : MonoBehaviour
 
     public Rigidbody2D rb;
     public float speed = 1;
+    public int damage = 1;
     protected Vector2 direction;
     public abstract void Init();
     public abstract void shoot(Vector2 vec);
@@ -16,7 +17,7 @@ public abstract class Bullet : MonoBehaviour
         var touchable = col.gameObject.GetComponent<ITouchable>();
         if (touchable != null)
         {
-            touchable.touchBullet();
+            touchable.touchBullet(this);
             this.gameObject.SetActive(false);
         }
     }

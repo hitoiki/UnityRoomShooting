@@ -25,7 +25,7 @@ public class DropWeapon : MonoBehaviour, IActionable, ITouchable
     {
         Debug.Log("touched");
     }
-    public void touchBullet()
+    public void touchBullet(Bullet b)
     {
 
     }
