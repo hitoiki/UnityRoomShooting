@@ -32,10 +32,19 @@ public class PLMove : MonoBehaviour
             {
                 /*ここにbulletの具現化処理*/
                 state.UseAmmo(1);
-                Bullet shootBullet = magazine.GetMob(playerRb.position, x => { x.Init(); x.rb.angularVelocity = -100f; }, x => { x.rb.angularVelocity = -100f; });
+                Bullet shootBullet = magazine.GetMob(
+                    playerRb.position,
+                    x => { x.Init(); x.shoot(keypad.AimDirection.Value); x.rb.angularVelocity = -100f; },
+                    x => { x.shoot(keypad.AimDirection.Value); x.rb.angularVelocity = -100f; });
                 Debug.Log("go shoot");
             }
         });
+        //方向転換
+        keypad.AimDirection.Subscribe(x =>
+        {
+            playerRb.transform.rotation = Quaternion.FromToRotation(Vector3.up, keypad.AimDirection.Value);
+        }
+        );
         //物にアクションする処理
         keypad.Action.Subscribe(boo =>
         {

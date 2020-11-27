@@ -26,7 +26,7 @@ public class PlayerState : MonoBehaviour
     [SerializeField] int Setammo = 0;
     [SerializeField] float Setspeed = 0;
     [SerializeField] float Sethands = 0;
-    [SerializeField] Weapon SetWeapon;
+    [SerializeField] Weapon SetWeapon = null;
 
 
     public bool IsDead;

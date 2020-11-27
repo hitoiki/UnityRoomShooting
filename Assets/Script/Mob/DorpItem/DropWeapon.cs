@@ -1,16 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DropWeapon : MonoBehaviour, IActionable, ITouchable
 {
-    public bool vanish;
-    public Weapon weapon;
+    public Text nameWriter;
+    public Weapon dropWeapon;
+
+    private void Awake()
+    {
+        if (dropWeapon == null) dropWeapon = GetComponent<Weapon>();
+        nameWriter.text = dropWeapon.weaponName;
+    }
     public void actionPlayer(PlayerState p)
     {
         Debug.Log("taked");
-        p.ChangeWeapon(weapon);
-        if (vanish) Destroy(this.gameObject);
+        Weapon buf = p.weapon.Value;
+        p.ChangeWeapon(dropWeapon);
+        dropWeapon = buf;
+        nameWriter.text = dropWeapon.weaponName;
     }
     public void touchPlayer(PlayerState p)
     {

@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17260c6769a8af489edff7cbaf4ed33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -7
+  speed: 1
   rb: {fileID: 0}
   vanish1: {x: -10, y: 10}
   vanish2: {x: 20, y: -10}
@@ -157,7 +157,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7693386788568754149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bbef4c9c7bf56b4d94620f020ea3efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bd4ca3e1016c7f42957cae4cc662c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 7693386788568754151}
+  rb: {fileID: 0}
+  speed: 7

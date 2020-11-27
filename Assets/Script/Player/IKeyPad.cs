@@ -10,7 +10,7 @@ public abstract class IKeyPad : MonoBehaviour
 
     public ReactiveProperty<Vector2> InputVector { get; set; } = new ReactiveProperty<Vector2>();
 
-    //ハンドルがfroatになってるのはアナログパッドに対応するため
+    public ReactiveProperty<Vector2> AimDirection { get; set; } = new ReactiveProperty<Vector2>();
 
     public abstract void KeyPadUpdate();
 }

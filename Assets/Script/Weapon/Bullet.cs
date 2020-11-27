@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public abstract class Bullet : MonoBehaviour
 {
 
     public Rigidbody2D rb;
-    public void Init()
-    {
-        rb = this.GetComponent<Rigidbody2D>();
-    }
+    public float speed = 1;
+    protected Vector2 direction;
+    public abstract void Init();
+    public abstract void shoot(Vector2 vec);
 
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -19,5 +19,10 @@ public class Bullet : MonoBehaviour
             touchable.touchBullet();
             this.gameObject.SetActive(false);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if (direction != Vector2.zero) rb.velocity = direction * speed;
     }
 }

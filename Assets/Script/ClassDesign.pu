@@ -29,10 +29,14 @@ package weapon{
     +bullet
     +MaxAmmo
     }
-    package bullet{
-    class bulletTouch
-    Itouchable <|.Up. bulletTouch 
-}
+    abstract class bullet{
+        +Init
+        +Shot
+        +SonotaMoromoro
+    }
+    weapon *-right- bullet
+    Itouchable <|.Up. bullet 
+
 }
 
 

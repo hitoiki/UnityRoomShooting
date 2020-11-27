@@ -21,7 +21,8 @@ public class Keyboard : IKeyPad
 
         if (Input.GetKey(KeyCode.LeftArrow)) recept += Vector2.left;
 
-        InputVector.Value = recept;
+        InputVector.Value = recept.normalized;
+        AimDirection.Value = Vector2.right;
     }
 
     private void Update()
