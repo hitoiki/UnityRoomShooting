@@ -13,6 +13,7 @@ public class SimpleBullet : Bullet
     public override void shoot(Vector2 vec)
     {
         direction = vec;
+        nowrange = range;
     }
 
 }

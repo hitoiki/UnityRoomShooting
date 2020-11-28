@@ -6,12 +6,13 @@ public abstract class Bullet : MonoBehaviour
 {
 
     public Rigidbody2D rb;
-    public float speed = 1;
-    public int damage = 1;
+    public readonly float speed = 1;
+    public readonly float range = 1;
+    protected float nowrange;
+    public readonly int damage = 1;
     protected Vector2 direction;
     public abstract void Init();
     public abstract void shoot(Vector2 vec);
-
     private void OnCollisionEnter2D(Collision2D col)
     {
         var touchable = col.gameObject.GetComponent<ITouchable>();
@@ -25,5 +26,11 @@ public abstract class Bullet : MonoBehaviour
     private void FixedUpdate()
     {
         if (direction != Vector2.zero) rb.velocity = direction * speed;
+        nowrange -= speed * Time.deltaTime;
+    }
+
+    private void Update()
+    {
+        if (nowrange <= 0) this.gameObject.SetActive(false);
     }
 }

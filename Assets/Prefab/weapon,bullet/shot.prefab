@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7693386788568754145}
   - component: {fileID: 7693386788568754144}
   - component: {fileID: 7693386788568754151}
-  - component: {fileID: 7693386788568754150}
   - component: {fileID: 7693386788568754147}
   m_Layer: 11
   m_Name: shot
@@ -132,22 +131,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7693386788568754150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7693386788568754149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b17260c6769a8af489edff7cbaf4ed33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  rb: {fileID: 0}
-  vanish1: {x: -10, y: 10}
-  vanish2: {x: 20, y: -10}
 --- !u!114 &7693386788568754147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,4 +144,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  speed: 7
