@@ -1,36 +1,39 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
-
-    public Rigidbody2D rb;
-    public readonly float speed = 1;
-    public readonly float range = 1;
+    //ObjectFlyerで飛ばす際にWeaponの情報を受け取って、飛ばす
+    private WeaponState weaponState;
+    [SerializeField] Rigidbody2D rb;
     protected float nowrange;
-    public readonly int damage = 1;
     protected Vector2 direction;
-    public abstract void Init();
-    public abstract void shoot(Vector2 vec);
-    private void OnCollisionEnter2D(Collision2D col)
+
+    //InitでWeaponStateを受け取るように
+    public virtual void Init(WeaponState w)
     {
-        var touchable = col.gameObject.GetComponent<ITouchable>();
-        if (touchable != null)
-        {
-            touchable.touchBullet(this);
-            this.gameObject.SetActive(false);
-        }
+        if (rb == null) rb = this.GetComponent<Rigidbody2D>();
+        weaponState = w;
+    }
+    public virtual void shoot(Vector2 vec)
+    {
+        direction = vec;
+        nowrange = weaponState.range;
     }
 
     private void FixedUpdate()
     {
-        if (direction != Vector2.zero) rb.velocity = direction * speed;
-        nowrange -= speed * Time.deltaTime;
-    }
-
-    private void Update()
-    {
+        if (direction != Vector2.zero) rb.velocity = direction * weaponState.speed;
+        nowrange -= weaponState.speed * Time.deltaTime;
         if (nowrange <= 0) this.gameObject.SetActive(false);
     }
+
+    /*public Bullet StateCasted(WeaponState castWeapon)
+    {
+        if (weaponState == null) Debug.Log("null");
+        weaponState = castWeapon;
+        Debug.Log("Casted");
+        return this;
+    }*/
 }

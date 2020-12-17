@@ -24,38 +24,53 @@ PlayerState <.. PLtouch : write
 interface Itouchable
 Itouchable .> PLtouch : 接触処理
 
-package weapon{
-    class weapon{
-    +bullet
-    +MaxAmmo
-    }
-    abstract class bullet{
+
+package Weapon{
+    class weapon
+    
+    class bullet{
         +Init
         +Shot
         +SonotaMoromoro
     }
-    weapon *-right- bullet
-    Itouchable <|.Up. bullet 
+    
+    class weaponState{
+        +speed
+        +bullet
+        +MaxAmmo
+        +andmore
+    }
+
+    class PlayersBullet
+    weapon *-- bullet
+    weapon *-- weaponState
+    weaponState<-left- bullet : 値参照
+    bullet <|-- EnemyBullet
+    Itouchable <|.Up. EnemyBullet
+    bullet <|-- PlayersBullet
+    Itouchable .Up.> PlayersBullet :接触処理 
 
 }
 
 
 
 package Enemy{
-    class EnemyTouch
     class EnemyMover
+    class EnemyTouch
     class Enemy
+    class EnemyBullet
 
-    Enemy *-- EnemyMover
     Enemy *-- EnemyTouch
+    Enemy *-- EnemyMover
     Itouchable <|. EnemyTouch
+    Enemy <|-- EnemyBullet 
 }
 
 package GameDealer{
     class datalog
     class UIWriter
 
-    PlayerState <- datalog : ob
+    PlayerState <-Up- datalog : ob
     datalog <- UIWriter : ob
 
 }

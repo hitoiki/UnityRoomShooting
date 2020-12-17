@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8813526741348843698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.580817, y: 0.751764, z: -0.2342582}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646c80e55ac72bc4da2a39d0a5f7cdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: shuriken
-  bullet: {fileID: 8706917171312190242, guid: 36f4e3e7076f43a42a1f32d61e15c633, type: 3}
-  MaxAmmo: 0
-  shotInterval: 0.5
+  weaponState:
+    weaponName: Shuriken
+    speed: 7
+    range: 7
+    damage: 1
+    MaxAmmo: 10
+    shotInterval: 0.5
+  playerBullet: {fileID: 4322249545970892116, guid: 36f4e3e7076f43a42a1f32d61e15c633,
+    type: 3}
+  enemyBullet: {fileID: 2784666793816902138, guid: b40dcfd9b3680ae498c921e4d32a2dc4,
+    type: 3}

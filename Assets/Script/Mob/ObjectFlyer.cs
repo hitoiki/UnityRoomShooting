@@ -7,8 +7,6 @@ public class ObjectFlyer<T> where T : Component
 {
     //一種類毎に扱う感じ
     //コイツを介してObject生成をする事で、処理が軽くなる魔法のコード
-
-    //飛ばし方にバリエーションが出せるようにして差し上げよう
     public T DealMob;
     private List<T> MobList;
 
@@ -36,7 +34,7 @@ public class ObjectFlyer<T> where T : Component
         }
 
 
-        var newMob = DealMob;
+        var newMob = DealMob as T;
         MobList.Add(MonoBehaviour.Instantiate(newMob, pos, Quaternion.identity));
         return newMob;
     }
@@ -56,7 +54,7 @@ public class ObjectFlyer<T> where T : Component
             }
         }
 
-        var newMob = MonoBehaviour.Instantiate(DealMob, pos, Quaternion.identity);
+        var newMob = MonoBehaviour.Instantiate(DealMob, pos, Quaternion.identity) as T;
         init(newMob);
         MobList.Add(newMob);
         return newMob;
@@ -77,7 +75,7 @@ public class ObjectFlyer<T> where T : Component
             }
         }
 
-        var newMob = MonoBehaviour.Instantiate(DealMob, pos, Quaternion.identity);
+        var newMob = MonoBehaviour.Instantiate(DealMob, pos, Quaternion.identity) as T;
         init(newMob);
         MobList.Add(newMob);
         return newMob;

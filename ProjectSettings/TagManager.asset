@@ -18,10 +18,10 @@ TagManager:
   - Basic
   - Enemy
   - Player
-  - ballets
+  - PLBullet
+  - ENBullet
+  - Item
   - Effect
-  - 
-  - 
   - 
   - 
   - 

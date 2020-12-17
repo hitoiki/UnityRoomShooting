@@ -21,7 +21,7 @@ public class PLMove : MonoBehaviour
         keypad = GetComponent<IKeyPad>();
         if (state == null) state = GetComponent<PlayerState>();
         playerRb = state.rb;
-        magazine = new ObjectFlyer<Bullet>(state.weapon.Value.bullet);
+        magazine = new ObjectFlyer<Bullet>(state.weapon.Value.GetPlayerBullet());
         //変化時の処理
         keypad.InputVector.Subscribe(x =>
         {
@@ -50,10 +50,11 @@ public class PLMove : MonoBehaviour
             }
         }
         );
+        //武器が変わった時の処理
         state.weapon.Subscribe(weapon =>
         {
-            magazine = new ObjectFlyer<Bullet>(state.weapon.Value.bullet);
-            cooltime = state.weapon.Value.shotInterval;
+            magazine = new ObjectFlyer<Bullet>(state.weapon.Value.GetPlayerBullet());
+            cooltime = state.weapon.Value.weaponState.shotInterval;
         }
         );
     }
@@ -70,13 +71,13 @@ public class PLMove : MonoBehaviour
             {
                 /*ここにbulletの具現化処理*/
                 state.UseAmmo(1);
-                cooltime = cooltime = state.weapon.Value.shotInterval;
+                cooltime = cooltime = state.weapon.Value.weaponState.shotInterval;
                 Bullet shootBullet = magazine.GetMob(
                     playerRb.position,
-                    x => { x.Init(); x.shoot(keypad.AimDirection.Value); /*x.rb.angularVelocity = -100f;*/ },
-                    x => { x.shoot(keypad.AimDirection.Value); /*x.rb.angularVelocity = -100f*/; });
+                    x => { x.Init(state.weapon.Value.weaponState); x.shoot(keypad.AimDirection.Value); },
+                    x => { x.shoot(keypad.AimDirection.Value); });
                 Debug.Log("go shoot");
-                cooltime = state.weapon.Value.shotInterval;
+                cooltime = state.weapon.Value.weaponState.shotInterval;
             }
         }
     }

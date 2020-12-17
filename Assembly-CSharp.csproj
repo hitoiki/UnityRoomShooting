@@ -51,6 +51,7 @@
      <Compile Include="Assets\Script\Mob\Tekiyou\Teki.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiGene.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\Wave.cs" />
+     <Compile Include="Assets\Script\Mob\Tekiyou\WeaponTeki.cs" />
      <Compile Include="Assets\Script\Player\IKeyPad.cs" />
      <Compile Include="Assets\Script\Player\Keyboard.cs" />
      <Compile Include="Assets\Script\Player\KeyboardMark2.cs" />
@@ -62,8 +63,10 @@
      <Compile Include="Assets\Script\Title\StartButton.cs" />
      <Compile Include="Assets\Script\Title\TitleDealer.cs" />
      <Compile Include="Assets\Script\Weapon\Bullet.cs" />
-     <Compile Include="Assets\Script\Weapon\SimpleBullet.cs" />
+     <Compile Include="Assets\Script\Weapon\EnemyBullet.cs" />
+     <Compile Include="Assets\Script\Weapon\PlayerBullet.cs" />
      <Compile Include="Assets\Script\Weapon\Weapon.cs" />
+     <Compile Include="Assets\Script\Weapon\WeaponState.cs" />
      <Compile Include="Assets\Script\botunoyatu\Dangeon\DangeonGene.cs" />
      <Compile Include="Assets\Script\botunoyatu\Dangeon\Wall.cs" />
      <Compile Include="Assets\Script\botunoyatu\EnemySuterusu\Enemy.cs" />
