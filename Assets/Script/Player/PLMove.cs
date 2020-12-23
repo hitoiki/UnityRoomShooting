@@ -6,9 +6,7 @@ using UniRx;
 
 public class PLMove : MonoBehaviour
 {
-
-
-    [SerializeField] private IKeyPad keypad;
+    [SerializeField] private KeyPad keyPad;
     [SerializeField] private Rigidbody2D playerRb;
     [SerializeField] private PlayerState state;
 
@@ -18,32 +16,32 @@ public class PLMove : MonoBehaviour
     private ObjectFlyer<Bullet> magazine;
     private void Awake()
     {
-        keypad = GetComponent<IKeyPad>();
+        keyPad = GetComponent<KeyPad>();
         if (state == null) state = GetComponent<PlayerState>();
         playerRb = state.rb;
         magazine = new ObjectFlyer<Bullet>(state.weapon.Value.GetPlayerBullet());
         //変化時の処理
-        keypad.InputVector.Subscribe(x =>
+        keyPad.InputVector.Subscribe(x =>
         {
             latestInput = x * state.speed.Value;
         });
         //弾丸を撃つ処理…の許可を出す処理
         //今までの流れからだとこうなるやん？
-        keypad.Shot.Subscribe(boo =>
+        keyPad.Shot.Subscribe(boo =>
         {
             shotable = boo;
         });
 
         //方向転換
-        keypad.AimDirection.Subscribe(x =>
+        keyPad.AimDirection.Subscribe(x =>
         {
-            playerRb.transform.rotation = Quaternion.FromToRotation(Vector3.up, keypad.AimDirection.Value);
+            if (state.playerMode == PlayerMode.alive) playerRb.transform.rotation = Quaternion.FromToRotation(Vector3.up, keyPad.AimDirection.Value);
         }
         );
         //物にアクションする処理
-        keypad.Action.Subscribe(boo =>
+        keyPad.Action.Subscribe(boo =>
         {
-            if (boo)
+            if (boo && state.playerMode == PlayerMode.alive)
             {
                 var inTheHands = Physics2D.CircleCastAll(playerRb.position, state.hands.Value, Vector2.zero).Select(x => x.collider.GetComponent<IActionable>());
                 if (inTheHands.Any(x => x != null)) inTheHands.Where(x => x != null).First().actionPlayer(state);
@@ -67,15 +65,15 @@ public class PLMove : MonoBehaviour
         if (cooltime > 0) cooltime -= Time.deltaTime;
         else
         {
-            if (shotable && !state.IsDead && state.ammo.Value != 0)
+            if (shotable && state.playerMode == PlayerMode.alive && state.ammo.Value != 0)
             {
                 /*ここにbulletの具現化処理*/
                 state.UseAmmo(1);
                 cooltime = cooltime = state.weapon.Value.weaponState.shotInterval;
                 Bullet shootBullet = magazine.GetMob(
                     playerRb.position,
-                    x => { x.Init(state.weapon.Value.weaponState); x.shoot(keypad.AimDirection.Value); },
-                    x => { x.shoot(keypad.AimDirection.Value); });
+                    x => { x.Init(state.weapon.Value.weaponState); x.shoot(keyPad.AimDirection.Value); },
+                    x => { x.shoot(keyPad.AimDirection.Value); });
                 Debug.Log("go shoot");
                 cooltime = state.weapon.Value.weaponState.shotInterval;
             }
@@ -84,7 +82,7 @@ public class PLMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!state.IsDead) playerRb.velocity = latestInput;
+        if (state.playerMode == PlayerMode.alive) playerRb.velocity = latestInput;
     }
 
     private void OnDrawGizmos()

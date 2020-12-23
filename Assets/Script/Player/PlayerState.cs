@@ -10,7 +10,7 @@ public class PlayerState : MonoBehaviour
     // そんな量があるわけではないが、ItouchableのtouchPlayerを極力静的にしたいため
     //Monobehaviorと分けて、Observableを継承できるように
 
-    //UniRxを導入したので、MonoBehaviourにする
+    //本当はいらないけど、inspectorで突っ込みたいのでMonoBehaviourにする
     private ReactiveProperty<int> _hp = new ReactiveProperty<int>();
     public IReadOnlyReactiveProperty<int> hp => _hp;
     private ReactiveProperty<int> _ammo = new ReactiveProperty<int>();
@@ -21,7 +21,6 @@ public class PlayerState : MonoBehaviour
 
     private ReactiveProperty<Weapon> _weapon = new ReactiveProperty<Weapon>();
     public IReadOnlyReactiveProperty<Weapon> weapon => _weapon;
-
     [SerializeField] int Sethp = 0;
     [SerializeField] int Setammo = 0;
     [SerializeField] float Setspeed = 0;
@@ -29,7 +28,7 @@ public class PlayerState : MonoBehaviour
     [SerializeField] Weapon SetWeapon = null;
 
 
-    public bool IsDead;
+    public PlayerMode playerMode;
     public Rigidbody2D rb;
     private void Awake()
     {
@@ -38,21 +37,21 @@ public class PlayerState : MonoBehaviour
         speed.Value = Setspeed;
         _hands.Value = Sethands;
         _weapon.Value = SetWeapon;
-        IsDead = false;
+        playerMode = PlayerMode.alive;
     }
 
     public void Damage(int n)
     {
-        if (!IsDead)
+        if (playerMode == PlayerMode.alive)
         {
             _hp.Value -= n;
-            if (_hp.Value <= 0) this.IsDead = true;
+            if (_hp.Value <= 0) this.playerMode = PlayerMode.dead;
         }
     }
 
     public void UseAmmo(int n)
     {
-        if (!IsDead)
+        if (playerMode == PlayerMode.alive)
         {
             _ammo.Value -= n;
             if (_ammo.Value <= 0) _ammo.Value = 0;
@@ -64,5 +63,10 @@ public class PlayerState : MonoBehaviour
         _weapon.Value = w;
     }
 
+}
+
+public enum PlayerMode
+{
+    alive, dead, pose
 }
 

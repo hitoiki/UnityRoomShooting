@@ -1611,6 +1611,7 @@ GameObject:
   - component: {fileID: 1898797582}
   - component: {fileID: 1898797581}
   - component: {fileID: 1898797587}
+  - component: {fileID: 1898797580}
   - component: {fileID: 1898797579}
   m_Layer: 10
   m_Name: JikiMark2
@@ -1635,10 +1636,21 @@ MonoBehaviour:
   Setammo: 99999
   Setspeed: 7
   Sethands: 1
-  SetWeapon: {fileID: 8813526741348843699, guid: 4eb1feb0787fd5e4c9d3b5d71b957c48,
-    type: 3}
-  IsDead: 0
+  SetWeapon: {fileID: 11400000, guid: 866bf74e1b059424985bf2933d618410, type: 2}
+  playerMode: 0
   rb: {fileID: 1898797583}
+--- !u!114 &1898797580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898797578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cf164b7649f654595ad55e8999b583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1898797581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1665,7 +1677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb27447cb2b6f10489f42e1b1f7516a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keypad: {fileID: 1898797587}
+  keyPad: {fileID: 0}
   playerRb: {fileID: 0}
   state: {fileID: 1898797579}
 --- !u!50 &1898797583
@@ -2292,8 +2304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameWriter: {fileID: 333334506207031502}
-  dropWeapon: {fileID: 5610558282509897113, guid: 5eddc17ece2a35d4299190feb195f885,
-    type: 3}
+  dropWeapon: {fileID: 11400000, guid: 1715da9efeddce44c8ed946cc2f863d3, type: 2}
 --- !u!223 &5306617494900815727
 Canvas:
   m_ObjectHideFlags: 0

@@ -5,8 +5,9 @@ using UnityEngine;
 public class WeaponTeki : MonoBehaviour, ITouchable
 {
     Rigidbody2D rb;
-    public SparkEffecter sparker;
+    public Effecter effecter;
     public GameDataLog DataLog;
+    public Weapon weapon;
 
     public int dealDamage = 0;
     public int dealScore = 0;
@@ -30,9 +31,14 @@ public class WeaponTeki : MonoBehaviour, ITouchable
         if (hp <= 0)
         {
             if (DataLog != null) DataLog.score.Value += dealScore;
-            if (sparker != null) sparker.Scatt(rb.position);
+            if (effecter != null) effecter.SparkScatt(rb.position);
             this.gameObject.SetActive(false);
         }
+
+    }
+
+    public void shot()
+    {
 
     }
 }

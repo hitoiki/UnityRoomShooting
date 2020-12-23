@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     protected float nowrange;
     protected Vector2 direction;
 
-    //InitでWeaponStateを受け取るように
+    //Initはコンストラクタの代わりを行う
     public virtual void Init(WeaponState w)
     {
         if (rb == null) rb = this.GetComponent<Rigidbody2D>();

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyboardMark2 : IKeyPad
+public class KeyboardMark2 : KeyPad
 {
     public override void KeyPadUpdate()
     {
@@ -23,8 +23,5 @@ public class KeyboardMark2 : IKeyPad
         AimDirection.Value = AimDirection.Value.normalized;
     }
 
-    private void Update()
-    {
-        KeyPadUpdate();
-    }
+
 }

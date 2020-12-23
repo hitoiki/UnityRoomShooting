@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Keyboard : IKeyPad
+public class Keyboard : KeyPad
 {
     //入力の受付を行う
     /*インターフェースでなく、同じコンポーネントのRacerDriveを見つけて
@@ -23,11 +23,6 @@ public class Keyboard : IKeyPad
 
         InputVector.Value = recept.normalized;
         AimDirection.Value = Vector2.right;
-    }
-
-    private void Update()
-    {
-        KeyPadUpdate();
     }
 
 }

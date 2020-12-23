@@ -34,7 +34,7 @@ public class GameDataLog : MonoBehaviour
             timer -= scoreRate;
         }
 
-        if (state.IsDead && nowGameMode.Value != GameMode.gameover)
+        if (state.playerMode == PlayerMode.dead && nowGameMode.Value != GameMode.gameover)
         {
             /*ゲームオーバー状態を示す*/
             nowGameMode.Value = GameMode.gameover;

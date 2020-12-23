@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-public class Weapon : MonoBehaviour
+[CreateAssetMenu(menuName = "MyScriptable/Create Weapon")]
+public class Weapon : ScriptableObject
 {
     /*
     Weaponは武器のステータスと、発射する二種の弾丸からなる
@@ -17,15 +19,13 @@ public class Weapon : MonoBehaviour
 
     課題:
     いつplayerBulletにweaponStateを入れるんや
-    ここで扱ってるBulletはPrefabの状態なので、
-    Weaponをインスタンス化しないとBulletの変更は上手くいかなそう
     →Objectflyerの初期化処理で、Initの他にCastStateを渡す
     最初はWeaponの仕事をPLMoveが担うのはどうかと感じたが、
     PLMoveがWeaponを読みまくって仕事をするので、これもまあOKってことにする
     敵の弾丸と自身の弾丸がぶつかるのはどうなのか
     →Layer分けて接触しないように
-    弾道変えるのにわざわざ派生クラス作るのは面倒そう
-    着弾時も色々変えたいし…
+    弾道変えるのには派生クラスを用いる
+    デコレーターデザインで何とかしたい
     */
     [SerializeField] public WeaponState weaponState;
     [SerializeField] private PlayerBullet playerBullet;
