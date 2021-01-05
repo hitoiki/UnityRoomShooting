@@ -14,7 +14,7 @@ public abstract class KeyPad : MonoBehaviour
     public abstract void KeyPadUpdate();
     private void Update()
     {
-        KeyPadUpdate();
+        if (Time.timeScale != 0) KeyPadUpdate();
     }
 }
 

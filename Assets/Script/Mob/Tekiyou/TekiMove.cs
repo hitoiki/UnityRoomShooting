@@ -15,7 +15,7 @@ public class TekiMove : MonoBehaviour
     実行するクラス
     の三つにする
     知覚情報を渡して、行動情報を渡すAI
-    関数を考えているけどObserverで勝手に監視し合うのがいいのか…？
+    関数を考えているけどObserverで勝手に監視し合うのがいいのか？
     そんな気がしてきた
     */
     [SerializeField] private KeyPad keyPad;
@@ -30,10 +30,8 @@ public class TekiMove : MonoBehaviour
     private void Awake()
     {
         Init();
-        keyPad = GetComponent<KeyPad>();
-        if (state == null) state = GetComponent<TekiState>();
         tekiRb = state.rb;
-        magazine = new ObjectFlyer<Bullet>(state.weapon.Value.GetPlayerBullet());
+        magazine = new ObjectFlyer<Bullet>(state.weapon.Value.GetEnemyBullet());
         //変化時の処理
         keyPad.InputVector.Subscribe(x =>
         {
@@ -49,23 +47,13 @@ public class TekiMove : MonoBehaviour
         //方向転換
         keyPad.AimDirection.Subscribe(x =>
         {
-            if (state.playerMode == PlayerMode.alive) tekiRb.transform.rotation = Quaternion.FromToRotation(Vector3.up, keyPad.AimDirection.Value);
+            if (state.tekiMode.Value == TekiMode.alive) tekiRb.transform.rotation = Quaternion.FromToRotation(Vector3.up, keyPad.AimDirection.Value);
         }
         );
-        //物にアクションする処理
-        /*keyPad.Action.Subscribe(boo =>
-        {
-            if (boo && state.playerMode == PlayerMode.alive)
-            {
-                var inTheHands = Physics2D.CircleCastAll(tekiRb.position, state.hands.Value, Vector2.zero).Select(x => x.collider.GetComponent<IActionable>());
-                if (inTheHands.Any(x => x != null)) inTheHands.Where(x => x != null).First().actionPlayer(state);
-            }
-        }
-        );*/
         //武器が変わった時の処理
         state.weapon.Subscribe(weapon =>
         {
-            magazine = new ObjectFlyer<Bullet>(state.weapon.Value.GetPlayerBullet());
+            magazine = new ObjectFlyer<Bullet>(state.weapon.Value.GetEnemyBullet());
             cooltime = state.weapon.Value.weaponState.shotInterval;
         }
         );
@@ -82,12 +70,10 @@ public class TekiMove : MonoBehaviour
             if (shotable)
             {
                 /*ここにbulletの具現化処理*/
-                cooltime = cooltime = state.weapon.Value.weaponState.shotInterval;
                 Bullet shootBullet = magazine.GetMob(
                     tekiRb.position,
                     x => { x.Init(state.weapon.Value.weaponState); x.shoot(keyPad.AimDirection.Value); },
                     x => { x.shoot(keyPad.AimDirection.Value); });
-                Debug.Log("go shoot");
                 cooltime = state.weapon.Value.weaponState.shotInterval;
             }
         }
@@ -95,12 +81,13 @@ public class TekiMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (state.playerMode == PlayerMode.alive) tekiRb.velocity = latestInput;
+        if (state.tekiMode.Value == TekiMode.alive) tekiRb.velocity = latestInput;
     }
 
     void Init()
     {
-        tekiRb = this.GetComponent<Rigidbody2D>();
+        if (state == null) state = GetComponent<TekiState>();
+        keyPad = GetComponent<KeyPad>();
     }
 
 

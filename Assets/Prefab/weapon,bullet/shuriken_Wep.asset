@@ -18,7 +18,7 @@ MonoBehaviour:
     range: 7
     damage: 1
     AmmoParShot: 0
-    shotInterval: 0.5
+    shotInterval: 0.25
   playerBullet: {fileID: 4322249545970892116, guid: 36f4e3e7076f43a42a1f32d61e15c633,
     type: 3}
   enemyBullet: {fileID: 2784666793816902138, guid: b40dcfd9b3680ae498c921e4d32a2dc4,

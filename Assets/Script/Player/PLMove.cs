@@ -69,7 +69,6 @@ public class PLMove : MonoBehaviour
             {
                 /*ここにbulletの具現化処理*/
                 state.UseAmmo(1);
-                cooltime = cooltime = state.weapon.Value.weaponState.shotInterval;
                 Bullet shootBullet = magazine.GetMob(
                     playerRb.position,
                     x => { x.Init(state.weapon.Value.weaponState); x.shoot(keyPad.AimDirection.Value); },
