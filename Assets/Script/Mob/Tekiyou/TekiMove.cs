@@ -30,8 +30,6 @@ public class TekiMove : MonoBehaviour
     private void Awake()
     {
         Init();
-        keyPad = GetComponent<KeyPad>();
-        if (state == null) state = GetComponent<TekiState>();
         tekiRb = state.rb;
         magazine = new ObjectFlyer<Bullet>(state.weapon.Value.GetEnemyBullet());
         //変化時の処理
@@ -88,7 +86,8 @@ public class TekiMove : MonoBehaviour
 
     void Init()
     {
-        tekiRb = this.GetComponent<Rigidbody2D>();
+        if (state == null) state = GetComponent<TekiState>();
+        keyPad = GetComponent<KeyPad>();
     }
 
 

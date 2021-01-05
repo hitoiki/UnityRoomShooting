@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeyboardMark2 : KeyPad
 {
-    protected override void KeyPadUpdate()
+    public override void KeyPadUpdate()
     {
         Shot.Value = Input.GetMouseButton(0);
         Action.Value = Input.GetMouseButtonDown(1);
