@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     //ObjectFlyerで飛ばす際にWeaponの情報を受け取って、飛ばす
-    public WeaponState weaponState { get; private set; }
+    private WeaponState weaponState;
     [SerializeField] Rigidbody2D rb;
     protected float nowrange;
     protected Vector2 direction;

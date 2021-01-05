@@ -7,7 +7,7 @@ public class EnemyBullet : Bullet, ITouchable
     public void touchPlayer(PlayerState p)
     {
         this.gameObject.SetActive(false);
-        p.Damage(weaponState.damage);
+        //p.Damage(weaponState.damage);
     }
 
     public void touchBullet(Bullet b) { }

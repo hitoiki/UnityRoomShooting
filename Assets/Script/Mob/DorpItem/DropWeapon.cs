@@ -13,17 +13,19 @@ public class DropWeapon : MonoBehaviour, IActionable, ITouchable
         if (dropWeapon == null) dropWeapon = GetComponent<Weapon>();
         nameWriter.text = dropWeapon.weaponState.weaponName;
     }
-    public void ChangeWeapon(Weapon w)
+    public void ChangeWeapon(ref Weapon w)
     {
         dropWeapon = w;
         nameWriter.text = dropWeapon.weaponState.weaponName;
     }
+
     public void actionPlayer(PlayerState p)
     {
         Debug.Log("taked");
         Weapon buf = p.weapon.Value;
         p.ChangeWeapon(dropWeapon);
-        ChangeWeapon(buf);
+        dropWeapon = buf;
+        nameWriter.text = dropWeapon.weaponState.weaponName;
     }
     public void touchPlayer(PlayerState p)
     {

@@ -16,7 +16,7 @@ public class TekiAI : KeyPad
     {
         if (state == null) state = this.GetComponent<TekiState>();
     }
-    public override void KeyPadUpdate()
+    protected override void KeyPadUpdate()
     {
         var inTheHands = Physics2D.CircleCastAll(this.transform.position, state.sight.Value, Vector2.zero).Select(x => x.collider.GetComponent<PlayerState>());
         if (inTheHands.Any(x => x != null))

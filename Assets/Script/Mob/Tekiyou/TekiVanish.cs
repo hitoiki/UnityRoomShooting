@@ -14,7 +14,9 @@ public class TekiVanish : MonoBehaviour
         {
             if (mode == TekiMode.dead)
             {
-                Instantiate(drop, this.transform.position, Quaternion.identity).ChangeWeapon(state.weapon.Value);
+                //なんか知らんけど参照渡しのあれで変数置かんといけない
+                var x = state.weapon.Value;
+                Instantiate(drop, this.transform.position, Quaternion.identity).ChangeWeapon(ref x);
                 this.gameObject.SetActive(false);
             }
         }

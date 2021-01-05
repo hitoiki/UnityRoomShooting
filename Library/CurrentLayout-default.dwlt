@@ -114,10 +114,22 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 588
-  m_MinSize: {x: 911, y: 442}
-  m_MaxSize: {x: 22006, y: 10021}
+  m_MinSize: {x: 909, y: 442}
+  m_MaxSize: {x: 22004, y: 10021}
   vertical: 0
-  controlID: 40
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  controlID: 152
+=======
+  controlID: 151
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+  controlID: 151
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+  controlID: 151
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,12 +149,24 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 534
+    width: 538
     height: 588
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 113
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  controlID: 35
+=======
+  controlID: 131
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+  controlID: 131
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+  controlID: 131
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -160,10 +184,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 534
-    height: 227
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    width: 538
+    height: 221
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -185,11 +209,29 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     y: 227
     width: 534
     height: 361
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+=======
+    y: 221
+    width: 538
+    height: 367
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+    y: 221
+    width: 538
+    height: 367
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+    y: 221
+    width: 538
+    height: 367
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -210,12 +252,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 534
+    x: 538
     y: 0
     width: 230
     height: 588
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -236,9 +278,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 764
+    x: 768
     y: 0
-    width: 235
+    width: 232
     height: 588
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
@@ -264,14 +306,26 @@ MonoBehaviour:
   - {fileID: 13}
   m_Position:
     serializedVersion: 2
-    x: 999
+    x: 1000
     y: 0
-    width: 281
+    width: 280
     height: 588
   m_MinSize: {x: 276, y: 192}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 139
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  controlID: 153
+=======
+  controlID: 152
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+  controlID: 152
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+  controlID: 152
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -289,10 +343,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 281
+    width: 280
     height: 392
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -315,10 +369,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 392
-    width: 281
+    width: 280
     height: 196
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -346,9 +400,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 300
-    width: 533
-    height: 340
+    y: 294
+    width: 537
+    height: 346
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewNames: []
   m_SerializedViewValues: []
@@ -393,23 +447,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 533
-      height: 319
-    m_Scale: {x: 0.6230469, y: 0.6230469}
-    m_Translation: {x: 266.5, y: 159.5}
+      width: 537
+      height: 325
+    m_Scale: {x: 0.6347656, y: 0.6347656}
+    m_Translation: {x: 268.5, y: 162.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -427.73666
+      x: -422.99078
       y: -256
-      width: 855.4733
+      width: 845.98157
       height: 512
     m_MinimalGUI: 1
-  m_defaultScale: 0.6230469
-  m_LastWindowPixelSize: {x: 799.5, y: 510}
+  m_defaultScale: 0.6347656
+  m_LastWindowPixelSize: {x: 805.5, y: 519}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -438,22 +492,40 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 72.66667
-    width: 533
-    height: 206
+    width: 537
+    height: 200
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: d1ffcfa5a6d7a1047bcb6aa950072ec9
   m_Gizmos: 1
-  m_SceneIsLit: 0
+  m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 10, y: 1.8562363, z: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_Target: {x: -36.877686, y: -10.777338, z: -3.1445312}
     speed: 2
-    m_Value: {x: 10, y: 1.8562363, z: 0}
+    m_Value: {x: -36.877686, y: -10.777338, z: -3.1445312}
+=======
+    m_Target: {x: -1842.7018, y: 124.04403, z: 759.7267}
+    speed: 2
+    m_Value: {x: -1842.7018, y: 124.04403, z: 759.7267}
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+    m_Target: {x: -1842.7018, y: 124.04403, z: 759.7267}
+    speed: 2
+    m_Value: {x: -1842.7018, y: 124.04403, z: 759.7267}
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+    m_Target: {x: -1842.7018, y: 124.04403, z: 759.7267}
+    speed: 2
+    m_Value: {x: -1842.7018, y: 124.04403, z: 759.7267}
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -466,7 +538,7 @@ MonoBehaviour:
   m_SceneViewState:
     showFog: 1
     showMaterialUpdate: 0
-    showSkybox: 0
+    showSkybox: 1
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -503,9 +575,27 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.923723
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_Target: 19.467192
     speed: 2
-    m_Value: 3.923723
+    m_Value: 19.467192
+=======
+    m_Target: 1455.9078
+    speed: 2
+    m_Value: 1455.9078
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+    m_Target: 1455.9078
+    speed: 2
+    m_Value: 1455.9078
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+    m_Target: 1455.9078
+    speed: 2
+    m_Value: 1455.9078
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -551,7 +641,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 534
+    x: 538
     y: 72.66667
     width: 228
     height: 567
@@ -559,23 +649,41 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 78430000
-      m_LastClickedID: 17272
-      m_ExpandedIDs: f4f1ffff7843000088430000
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      m_SelectedIDs: 32fbffff
+      m_LastClickedID: -1230
+      m_ExpandedIDs: 58fbffff
+=======
+      m_SelectedIDs: 9ac4ffff
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6cfbffff
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+      m_SelectedIDs: 9ac4ffff
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6cfbffff
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+      m_SelectedIDs: 9ac4ffff
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6cfbffff
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: JikiMark2
+        m_OriginalName: JikiMark2
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 14586
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -606,9 +714,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 764
+    x: 768
     y: 72.66667
-    width: 233
+    width: 230
     height: 567
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
@@ -624,34 +732,52 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefab/NewTeki
+    - Assets/Prefab/weapon,bullet
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefab/NewTeki
+  - Assets/Prefab/weapon,bullet
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\lifik\Github\UnityRoomShooting
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0a3b0000
-    m_LastClickedID: 15114
-    m_ExpandedIDs: 00000000d63a0000d83a0000da3a0000dc3a0000de3a0000e03a000000ca9a3b
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_SelectedIDs: 123b0000
+    m_LastClickedID: 15122
+    m_ExpandedIDs: 00000000d83a0000da3a0000dc3a0000de3a0000e03a0000e23a000000ca9a3b
+=======
+    m_SelectedIDs: cc3a0000
+    m_LastClickedID: 15052
+    m_ExpandedIDs: 00000000943a0000963a0000983a00009a3a00009c3a00009e3a0000e23a000000ca9a3b
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+    m_SelectedIDs: cc3a0000
+    m_LastClickedID: 15052
+    m_ExpandedIDs: 00000000943a0000963a0000983a00009a3a00009c3a00009e3a0000e23a000000ca9a3b
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+    m_SelectedIDs: cc3a0000
+    m_LastClickedID: 15052
+    m_ExpandedIDs: 00000000943a0000963a0000983a00009a3a00009c3a00009e3a0000e23a000000ca9a3b
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: weapon,bullet
+      m_OriginalName: weapon,bullet
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 15052
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -665,7 +791,19 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d63a0000d83a0000da3a0000dc3a0000de3a0000e03a0000
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_ExpandedIDs: 00000000d83a0000da3a0000dc3a0000de3a0000e03a0000e23a0000
+=======
+    m_ExpandedIDs: 00000000943a0000963a0000983a00009a3a00009c3a00009e3a0000a03a0000
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+    m_ExpandedIDs: 00000000943a0000963a0000983a00009a3a00009c3a00009e3a0000a03a0000
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
+=======
+    m_ExpandedIDs: 00000000943a0000963a0000983a00009a3a00009c3a00009e3a0000a03a0000
+>>>>>>> parent of 1300f71... Stateを=>を使って洗練、敵の原型作成
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -717,7 +855,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 59}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 110
@@ -742,9 +880,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 999.3334
+    x: 1000
     y: 72.66667
-    width: 280
+    width: 279
     height: 371
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
@@ -758,7 +896,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 100
+  m_LastVerticalScrollValue: 0
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -780,8 +918,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 999.3334
+    x: 1000
     y: 464.6667
-    width: 280
+    width: 279
     height: 175
   m_ViewDataDictionary: {fileID: 0}
