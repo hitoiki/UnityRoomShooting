@@ -14,7 +14,8 @@ public class PLMove : MonoBehaviour
     private bool shotable;
     private float cooltime;
     private ObjectFlyer<Bullet> magazine;
-    private void Awake()
+    //値の取得はStart
+    private void Start()
     {
         keyPad = GetComponent<KeyPad>();
         if (state == null) state = GetComponent<PlayerState>();

@@ -27,7 +27,8 @@ public class TekiMove : MonoBehaviour
     private Vector2 latestInput;
     private bool shotable;
     private float cooltime;
-    private void Awake()
+    //値の取得はStart
+    private void Start()
     {
         Init();
         tekiRb = state.rb;

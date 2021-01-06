@@ -7,7 +7,7 @@ public class Keyboard : KeyPad
     //入力の受付を行う
     /*インターフェースでなく、同じコンポーネントのRacerDriveを見つけて
     そこに値を突っ込む形式*/
-    public override void KeyPadUpdate()
+    protected override void KeyPadCheck()
     {
         Shot.Value = Input.GetKeyDown(KeyCode.Z);
         Action.Value = Input.GetKeyDown(KeyCode.X);

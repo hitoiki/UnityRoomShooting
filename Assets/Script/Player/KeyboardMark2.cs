@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeyboardMark2 : KeyPad
 {
-    public override void KeyPadUpdate()
+    protected override void KeyPadCheck()
     {
         Shot.Value = Input.GetMouseButton(0);
         Action.Value = Input.GetMouseButtonDown(1);
@@ -18,9 +18,9 @@ public class KeyboardMark2 : KeyPad
 
         if (Input.GetKey(KeyCode.A)) recept += Vector2.left;
 
-        InputVector.Value = recept.normalized;
+        InputVector.Value = recept;
         AimDirection.Value = Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
-        AimDirection.Value = AimDirection.Value.normalized;
+        //AimDirection.Value = AimDirection.Value.normalized;
     }
 
 

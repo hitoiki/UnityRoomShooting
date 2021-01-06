@@ -8,28 +8,38 @@ public class TekiState : MonoBehaviour
     // 敵の持つ状態
     // PlayerStateを元に色々
 
-    [SerializeField] int Sethp = 0;
-    [SerializeField] int Setammo = 0;
-    [SerializeField] float Setspeed = 0;
-    [SerializeField] float SetSight = 0;
-    [SerializeField] int SettouchDamage = 0;
-    [SerializeField] Weapon SetWeapon = null;
+    [SerializeField] int setHp = 0;
+    [SerializeField] int setShootingInterval = 0;
+    [SerializeField] float setSpeed = 0;
+    [SerializeField] float setSight = 0;
+    [SerializeField] int setTouchDamage = 0;
+    [SerializeField] Weapon setWeapon = null;
 
-    private ReactiveProperty<int> _hp => new ReactiveProperty<int>(Sethp);
+    private ReactiveProperty<int> _hp = new ReactiveProperty<int>();
     public IReadOnlyReactiveProperty<int> hp => _hp;
     public ReactiveProperty<float> shootinginterval { get; set; } = new ReactiveProperty<float>();
-    private ReactiveProperty<float> _sight => new ReactiveProperty<float>(SetSight);
+    private ReactiveProperty<float> _sight = new ReactiveProperty<float>();
     public IReadOnlyReactiveProperty<float> sight => _sight;
-    private ReactiveProperty<Weapon> _weapon => new ReactiveProperty<Weapon>(SetWeapon);
+    private ReactiveProperty<Weapon> _weapon = new ReactiveProperty<Weapon>();
     public IReadOnlyReactiveProperty<Weapon> weapon => _weapon;
-    public ReactiveProperty<float> _speed => new ReactiveProperty<float>(Setspeed);
+    public ReactiveProperty<float> _speed = new ReactiveProperty<float>();
     public ReactiveProperty<float> speed => _speed;
-    public ReactiveProperty<int> _touchDamage => new ReactiveProperty<int>(SettouchDamage);
+    public ReactiveProperty<int> _touchDamage = new ReactiveProperty<int>();
     public IReadOnlyReactiveProperty<int> touchDamage => _touchDamage;
 
-    private ReactiveProperty<TekiMode> _tekiMode => new ReactiveProperty<TekiMode>(TekiMode.alive);
+    private ReactiveProperty<TekiMode> _tekiMode = new ReactiveProperty<TekiMode>();
     public IReadOnlyReactiveProperty<TekiMode> tekiMode => _tekiMode;
     public Rigidbody2D rb;
+
+    private void Awake()
+    {
+        _hp.Value = setHp;
+        shootinginterval.Value = setShootingInterval;
+        _speed.Value = setSpeed;
+        _sight.Value = setSight;
+        _weapon.Value = setWeapon;
+        _tekiMode.Value = TekiMode.alive;
+    }
 
     public void Damage(int n)
     {

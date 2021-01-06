@@ -6,7 +6,8 @@ public class TekiTouch : MonoBehaviour, ITouchable
 {
     [SerializeField] private TekiState state;
     [SerializeField] private Rigidbody2D rb;
-    private void Awake()
+    //値の取得はStart
+    private void Start()
     {
         if (state == null) state = GetComponent<TekiState>();
         rb = state.rb;

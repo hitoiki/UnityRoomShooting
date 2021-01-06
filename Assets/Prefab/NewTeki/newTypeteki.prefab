@@ -148,12 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b7da242739f78458e8959945473ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sethp: 10
-  Setammo: 100
-  Setspeed: 1
-  SetSight: 7
-  SettouchDamage: 1
-  SetWeapon: {fileID: 11400000, guid: 866bf74e1b059424985bf2933d618410, type: 2}
+  setHp: 5
+  setShootingInterval: 1
+  setSpeed: 3
+  setSight: 5
+  setTouchDamage: 1
+  setWeapon: {fileID: 11400000, guid: 866bf74e1b059424985bf2933d618410, type: 2}
   rb: {fileID: 738161299963300228}
 --- !u!114 &7302962878688783155
 MonoBehaviour:

@@ -11,7 +11,13 @@ public abstract class KeyPad : MonoBehaviour
     public ReactiveProperty<Vector2> InputVector { get; set; } = new ReactiveProperty<Vector2>();
     public ReactiveProperty<Vector2> AimDirection { get; set; } = new ReactiveProperty<Vector2>();
 
-    public abstract void KeyPadUpdate();
+    protected abstract void KeyPadCheck();
+    public void KeyPadUpdate()
+    {
+        KeyPadCheck();
+        InputVector.Value = InputVector.Value.normalized;
+        AimDirection.Value = AimDirection.Value.normalized;
+    }
     private void Update()
     {
         if (Time.timeScale != 0) KeyPadUpdate();

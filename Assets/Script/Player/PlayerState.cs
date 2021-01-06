@@ -12,23 +12,23 @@ public class PlayerState : MonoBehaviour
 
     //本当はいらないけど、inspectorで突っ込みたいのでMonoBehaviourにする
 
-    [SerializeField] int Sethp = 0;
-    [SerializeField] int Setammo = 0;
-    [SerializeField] float Setspeed = 0;
-    [SerializeField] float Sethands = 0;
-    [SerializeField] Weapon SetWeapon = null;
+    [SerializeField] int setHp = 0;
+    [SerializeField] int setAmmo = 0;
+    [SerializeField] float setSpeed = 0;
+    [SerializeField] float setHands = 0;
+    [SerializeField] Weapon setWeapon = null;
 
     //式木？の機能を使って初期化させておく
-    private ReactiveProperty<int> _hp => new ReactiveProperty<int>(Sethp);
+    private ReactiveProperty<int> _hp = new ReactiveProperty<int>();
     public IReadOnlyReactiveProperty<int> hp => _hp;
-    private ReactiveProperty<int> _ammo => new ReactiveProperty<int>(Setammo);
+    private ReactiveProperty<int> _ammo = new ReactiveProperty<int>();
     public IReadOnlyReactiveProperty<int> ammo => _ammo;
-    public ReactiveProperty<float> _speed => new ReactiveProperty<float>(Setspeed);
+    public ReactiveProperty<float> _speed = new ReactiveProperty<float>();
     public IReadOnlyReactiveProperty<float> speed => _speed;
-    private ReactiveProperty<float> _hands => new ReactiveProperty<float>(Sethands);
+    private ReactiveProperty<float> _hands = new ReactiveProperty<float>();
     public IReadOnlyReactiveProperty<float> hands => _hands;
 
-    private ReactiveProperty<Weapon> _weapon => new ReactiveProperty<Weapon>(SetWeapon);
+    private ReactiveProperty<Weapon> _weapon = new ReactiveProperty<Weapon>();
     public IReadOnlyReactiveProperty<Weapon> weapon => _weapon;
 
 
@@ -36,14 +36,14 @@ public class PlayerState : MonoBehaviour
     public Rigidbody2D rb;
     private void Awake()
     {
-        /*
-        _hp.Value = Sethp;
-        _ammo.Value = Setammo;
-        _speed.Value = Setspeed;
-        _hands.Value = Sethands;
-        _weapon.Value = SetWeapon;
+
+        _hp.Value = setHp;
+        _ammo.Value = setAmmo;
+        _speed.Value = setSpeed;
+        _hands.Value = setHands;
+        _weapon.Value = setWeapon;
         playerMode = PlayerMode.alive;
-        */
+
     }
 
     public void Damage(int n)

@@ -8,7 +8,8 @@ public class PLTouch : MonoBehaviour
 {
     [SerializeField] private PlayerState state;
     [SerializeField] private Rigidbody2D rb;
-    private void Awake()
+    //値の取得はStart
+    private void Start()
     {
         if (state == null) state = GetComponent<PlayerState>();
         rb = state.rb;
