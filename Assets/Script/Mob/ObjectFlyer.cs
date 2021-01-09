@@ -80,5 +80,17 @@ public class ObjectFlyer<T> where T : Component
         MobList.Add(newMob);
         return newMob;
     }
+
+    public void Release()
+    {
+        foreach (var obj in MobList)
+        {
+            if (obj.gameObject.activeSelf == false)
+            {
+                GameObject.Destroy(obj.gameObject);
+            }
+
+        }
+    }
 }
 

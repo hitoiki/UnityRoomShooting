@@ -28,6 +28,7 @@ public class PLShot : MonoBehaviour
         //武器が変わった時の処理
         state.weapon.Subscribe(weapon =>
         {
+            magazine.Release();
             magazine = new ObjectFlyer<Bullet>(state.weapon.Value.GetPlayerBullet());
             cooltime = state.weapon.Value.weaponState.shotInterval;
         }

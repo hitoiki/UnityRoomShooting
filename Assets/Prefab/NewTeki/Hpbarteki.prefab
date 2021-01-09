@@ -584,6 +584,7 @@ GameObject:
   - component: {fileID: 7375096487484662198}
   - component: {fileID: 6527879771433745544}
   - component: {fileID: 7105354587458889304}
+  - component: {fileID: 1533363670118859504}
   - component: {fileID: 7227363143385218286}
   - component: {fileID: 1007792123555529967}
   - component: {fileID: 662230412898221891}
@@ -708,6 +709,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1533363670118859504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8064739359912812396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c06ce6a5e487e4688ac725ed65a922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPad: {fileID: 0}
+  tekiRb: {fileID: 0}
+  sparker: {fileID: 0}
+  DataLog: {fileID: 0}
+  state: {fileID: 0}
 --- !u!114 &7227363143385218286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,6 +789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: {fileID: 0}
   rb: {fileID: 0}
+  effecter: {fileID: 0}
 --- !u!114 &5640774253266081967
 MonoBehaviour:
   m_ObjectHideFlags: 0

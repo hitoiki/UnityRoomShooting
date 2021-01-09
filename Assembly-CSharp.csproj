@@ -54,6 +54,7 @@
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiAI.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiKomono\HPbar.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiMove.cs" />
+     <Compile Include="Assets\Script\Mob\Tekiyou\TekiShot.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiState.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiTouch.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiVanish.cs" />
