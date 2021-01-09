@@ -21,6 +21,6 @@ public class TekiTouch : MonoBehaviour, ITouchable
     {
         Debug.Log(b.weaponState.weaponName);
         state.Damage(b.weaponState.damage);
-
+        b.gameObject.SetActive(false);
     }
 }

@@ -10,6 +10,7 @@ class PlayerState{
 }
 
 class PLMove
+class PLShot
 class PLtouch
 
 interface IKeyPad
@@ -17,6 +18,7 @@ class KeyPad
 
 KeyPad --o IKeyPad
 IKeyPad <- PLMove : ob
+PlayerState <.left. PLShot : ob,write
 PlayerState <.. PLMove : ob,write
 PlayerState <.. PLtouch : write
 }

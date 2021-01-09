@@ -44,6 +44,7 @@
      <Compile Include="Assets\Script\InterFace\ITouchable.cs" />
      <Compile Include="Assets\Script\Mob\DorpItem\DropItem.cs" />
      <Compile Include="Assets\Script\Mob\DorpItem\DropWeapon.cs" />
+     <Compile Include="Assets\Script\Mob\DorpItem\PushedByBullet.cs" />
      <Compile Include="Assets\Script\Mob\ObjectFlyer.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\KyuTeki\EditableTeki.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\KyuTeki\Flow.cs" />
@@ -51,6 +52,7 @@
      <Compile Include="Assets\Script\Mob\Tekiyou\KyuTeki\TekiGene.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\KyuTeki\Wave.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiAI.cs" />
+     <Compile Include="Assets\Script\Mob\Tekiyou\TekiKomono\HPbar.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiMove.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiState.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiTouch.cs" />
@@ -61,6 +63,7 @@
      <Compile Include="Assets\Script\Player\KeyboardMark2.cs" />
      <Compile Include="Assets\Script\Player\PLMenu.cs" />
      <Compile Include="Assets\Script\Player\PLMove.cs" />
+     <Compile Include="Assets\Script\Player\PLShot.cs" />
      <Compile Include="Assets\Script\Player\PLTouch.cs" />
      <Compile Include="Assets\Script\Player\PlayerState.cs" />
      <Compile Include="Assets\Script\TestTime.cs" />

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DropWeapon : MonoBehaviour, IActionable, ITouchable
+public class DropWeapon : MonoBehaviour, IActionable
 {
     public Text nameWriter;
     public Weapon dropWeapon;
@@ -24,13 +24,5 @@ public class DropWeapon : MonoBehaviour, IActionable, ITouchable
         Weapon buf = p.weapon.Value;
         p.ChangeWeapon(dropWeapon);
         ChangeWeapon(buf);
-    }
-    public void touchPlayer(PlayerState p)
-    {
-        Debug.Log("touched");
-    }
-    public void touchBullet(Bullet b)
-    {
-
     }
 }

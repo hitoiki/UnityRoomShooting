@@ -10,7 +10,7 @@ public class PlayerBullet : Bullet
         if (touchable != null)
         {
             touchable.touchBullet(this);
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
         }
     }
 }

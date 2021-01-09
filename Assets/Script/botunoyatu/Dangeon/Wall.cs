@@ -10,7 +10,4 @@ public class Wall : MonoBehaviour, ITouchable
     {
         Debug.Log("bulletTouch");
     }
-    public void subEffect()
-    {
-    }
 }
