@@ -37,6 +37,7 @@ public class TekiState : MonoBehaviour
         shootinginterval.Value = setShootingInterval;
         _speed.Value = setSpeed;
         _sight.Value = setSight;
+        _touchDamage.Value = setTouchDamage;
         _weapon.Value = setWeapon;
         _tekiMode.Value = TekiMode.alive;
     }

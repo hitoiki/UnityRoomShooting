@@ -9,36 +9,42 @@ public class TekiAI : KeyPad
     //視野となるRayを飛ばして、Objectを取得、状況に応じてKeyPadを操作
     //知覚情報はTekiStateから色々する
 
-    [SerializeField] private TekiState state;
-    private PlayerState targetPlayer;
+    //TekiTacticsでゴリゴリやると思った？残念！攻撃の間隔だけで充分なのでした！
+    //敵は武器で変わるから弾幕撃つ武器用意すればそれで大丈夫説ある
 
+    [SerializeField] private TekiState state;
+    [SerializeField] private PlayerState targetPlayer;
+    private float orderingTime = 0;
+    private int nowOrder = 0;
+
+    [SerializeField] private List<TacticsTag> orderList = null;
     private void Awake()
     {
         if (state == null) state = this.GetComponent<TekiState>();
     }
     protected override void KeyPadCheck()
     {
-        var inTheHands = Physics2D.CircleCastAll(this.transform.position, state.sight.Value, Vector2.zero).Select(x => x.collider.GetComponent<PlayerState>());
+
+        var inTheHands = Physics2D.CircleCastAll(state.transform.position, state.sight.Value, Vector2.zero).Select(x => x.collider.GetComponent<PlayerState>());
         if (inTheHands.Any(x => x != null))
         {
+            Debug.Log("ThereIsAny");
             targetPlayer = inTheHands.Where(x => x != null).First();
-            Aiming(targetPlayer);
+            if (orderingTime < orderList[nowOrder].time)
+            {
+                orderList[nowOrder].writtenTactics.tactics(targetPlayer.transform.position, state.transform.position, this);
+                orderingTime += Time.deltaTime;
+            }
+            else
+            {
+                nowOrder += 1;
+                nowOrder %= orderList.Count;
+                orderingTime = 0;
+            }
+
+
         }
         else Idling();
-    }
-
-    protected virtual void Aiming(PlayerState p)
-    {
-        InputVector.Value = targetPlayer.transform.position - this.transform.position;
-        AimDirection.Value = targetPlayer.transform.position - this.transform.position;
-        if (Shot.Value)
-        {
-
-        }
-        else
-        {
-            Shot.Value = true;
-        }
     }
     protected virtual void Idling()
     {
@@ -47,3 +53,9 @@ public class TekiAI : KeyPad
     }
 }
 
+[System.Serializable]
+public class TacticsTag
+{
+    public Tactics writtenTactics;
+    public float time;
+}

@@ -5,8 +5,8 @@ using UniRx;
 
 public class TekiVanish : MonoBehaviour
 {
-    [SerializeField] TekiState state;
-    [SerializeField] DropWeapon drop;
+    [SerializeField] TekiState state = null;
+    [SerializeField] DropWeapon drop = null;
     void Start()
     {
         if (state == null) state = GetComponent<TekiState>();

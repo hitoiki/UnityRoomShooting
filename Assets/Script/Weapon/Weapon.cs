@@ -27,9 +27,9 @@ public class Weapon : ScriptableObject
     弾道変えるのには派生クラスを用いる
     デコレーターデザインで何とかしたい
     */
-    [SerializeField] public WeaponState weaponState;
-    [SerializeField] private PlayerBullet playerBullet;
-    [SerializeField] private EnemyBullet enemyBullet;
+    [SerializeField] public WeaponState weaponState = null;
+    [SerializeField] private PlayerBullet playerBullet = null;
+    [SerializeField] private EnemyBullet enemyBullet = null;
 
     public PlayerBullet GetPlayerBullet()
     {

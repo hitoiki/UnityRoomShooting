@@ -6,7 +6,7 @@ public class TekiTouch : MonoBehaviour, ITouchable
 {
     [SerializeField] private TekiState state;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] public Effecter effecter;
+
     //値の取得はStart
     private void Start()
     {

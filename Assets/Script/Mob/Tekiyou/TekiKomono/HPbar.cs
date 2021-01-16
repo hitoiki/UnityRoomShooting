@@ -6,8 +6,8 @@ using UniRx;
 
 public class HPbar : MonoBehaviour
 {
-    [SerializeField] TekiState state;
-    [SerializeField] Slider bar;
+    [SerializeField] TekiState state = null;
+    [SerializeField] Slider bar = null;
     void Start()
     {
         if (state == null) state = GetComponent<TekiState>();

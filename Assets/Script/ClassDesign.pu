@@ -57,15 +57,18 @@ package Weapon{
 
 
 package Enemy{
-    class EnemyMover
-    class EnemyTouch
-    class Enemy
-    class EnemyBullet
+    class TekiMove
+    class TekiTouch
+    class TekiShot
+    class TekiAI
+    class TekiState
 
-    Enemy *-- EnemyTouch
-    Enemy *-- EnemyMover
-    Itouchable <|. EnemyTouch
-    Enemy <|-- EnemyBullet 
+    TekiState <.. TekiMove
+    TekiAI <.. TekiMove
+    TekiState <.. TekiTouch
+    TekiState <.. TekiShot
+    Itouchable <|. TekiTouch
+    TekiState *-- EnemyBullet 
 }
 
 package GameDealer{
