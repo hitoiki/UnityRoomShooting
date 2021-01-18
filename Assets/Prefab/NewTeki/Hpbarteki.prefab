@@ -758,6 +758,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: {fileID: 0}
+  targetPlayer: {fileID: 0}
+  orderList:
+  - writtenTactics: {fileID: 11400000, guid: 3c11046b66915a949ba83e9371158227, type: 2}
+    time: 1
+  - writtenTactics: {fileID: 11400000, guid: 0583bdaa36bcad44f86d6b77ee61aee4, type: 2}
+    time: 1
 --- !u!114 &662230412898221891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,7 +795,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: {fileID: 0}
   rb: {fileID: 0}
-  effecter: {fileID: 0}
 --- !u!114 &5640774253266081967
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : Bullet, ITouchable
+public class EnemyBullet : Bullet, IPlayerTouchable
 {
     public void touchPlayer(PlayerState p)
     {
@@ -10,5 +10,4 @@ public class EnemyBullet : Bullet, ITouchable
         p.Damage(weaponState.damage);
     }
 
-    public void touchBullet(Bullet b) { }
 }

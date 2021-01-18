@@ -23,9 +23,11 @@ PlayerState <.. PLMove : ob,write
 PlayerState <.. PLtouch : write
 }
 
-interface Itouchable
-Itouchable .> PLtouch : 接触処理
-
+package Itouchable{
+    interface IBulletTouchable
+    interface IPlayerTouchable
+}
+    IPlayerTouchable ..> PLtouch : 接触処理 
 
 package Weapon{
     class weapon
@@ -48,9 +50,8 @@ package Weapon{
     weapon *-- weaponState
     weaponState<-left- bullet : 値参照
     bullet <|-- EnemyBullet
-    Itouchable <|.Up. EnemyBullet
+    IBulletTouchable <|.Up. EnemyBullet
     bullet <|-- PlayersBullet
-    Itouchable .Up.> PlayersBullet :接触処理 
 
 }
 
@@ -67,16 +68,21 @@ package Enemy{
     TekiAI <.. TekiMove
     TekiState <.. TekiTouch
     TekiState <.. TekiShot
-    Itouchable <|. TekiTouch
+    Itouchable <|.up. TekiTouch
     TekiState *-- EnemyBullet 
+    IBulletTouchable ..> PlayersBullet :接触処理
 }
 
 package GameDealer{
     class datalog
+    class gameFlowDealer
     class UIWriter
 
     PlayerState <-Up- datalog : ob
-    datalog <- UIWriter : ob
+    datalog <-up- UIWriter : ob
+    datalog <- gameFlowDealer : ob
+
+    PlayerState <- gameFlowDealer : ob
 
 }
 

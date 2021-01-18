@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\Dealer\GameDataLog.cs" />
+     <Compile Include="Assets\Script\Dealer\TekiGenerator.cs" />
      <Compile Include="Assets\Script\Dealer\TimeDealer.cs" />
      <Compile Include="Assets\Script\Dealer\UIWriter.cs" />
      <Compile Include="Assets\Script\Dealer\Weather.cs" />
@@ -45,6 +46,7 @@
      <Compile Include="Assets\Script\InterFace\IActionable.cs" />
      <Compile Include="Assets\Script\InterFace\ITouchable.cs" />
      <Compile Include="Assets\Script\Mob\DorpItem\DropItem.cs" />
+     <Compile Include="Assets\Script\Mob\DorpItem\DropRelics.cs" />
      <Compile Include="Assets\Script\Mob\DorpItem\DropWeapon.cs" />
      <Compile Include="Assets\Script\Mob\DorpItem\PushedByBullet.cs" />
      <Compile Include="Assets\Script\Mob\ObjectFlyer.cs" />
@@ -54,7 +56,7 @@
      <Compile Include="Assets\Script\Mob\Tekiyou\KyuTeki\TekiGene.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\KyuTeki\Wave.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\Tactics\Tactics.cs" />
-     <Compile Include="Assets\Script\Mob\Tekiyou\Tactics\TacticsChase.cs" />
+     <Compile Include="Assets\Script\Mob\Tekiyou\Tactics\TacticsHanyo.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\Tactics\TacticsIdling.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiAI.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiKomono\HPbar.cs" />
@@ -63,7 +65,6 @@
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiState.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiTouch.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiVanish.cs" />
-     <Compile Include="Assets\Script\Mob\Tekiyou\WeaponTeki.cs" />
      <Compile Include="Assets\Script\Player\KeyPad.cs" />
      <Compile Include="Assets\Script\Player\Keyboard.cs" />
      <Compile Include="Assets\Script\Player\KeyboardMark2.cs" />
@@ -83,9 +84,6 @@
      <Compile Include="Assets\Script\Weapon\WeaponState.cs" />
      <Compile Include="Assets\Script\botunoyatu\Dangeon\DangeonGene.cs" />
      <Compile Include="Assets\Script\botunoyatu\Dangeon\Wall.cs" />
-     <Compile Include="Assets\Script\botunoyatu\EnemySuterusu\Enemy.cs" />
-     <Compile Include="Assets\Script\botunoyatu\EnemySuterusu\EnemyMover.cs" />
-     <Compile Include="Assets\Script\botunoyatu\EnemySuterusu\Report.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

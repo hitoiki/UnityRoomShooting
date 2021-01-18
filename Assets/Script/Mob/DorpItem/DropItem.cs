@@ -2,19 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropItem : MonoBehaviour, IActionable, ITouchable
+public class DropItem : MonoBehaviour, IActionable
 {
 
     public void actionPlayer(PlayerState p)
     {
         Debug.Log("taked");
-    }
-    public void touchPlayer(PlayerState p)
-    {
-        Debug.Log("touched");
-    }
-    public void touchBullet(Bullet b)
-    {
-
     }
 }

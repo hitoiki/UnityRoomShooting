@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Teki : MonoBehaviour, ITouchable
+public class Teki : MonoBehaviour, IBulletTouchable, IPlayerTouchable
 {
     // 敵としてもつ基本的な性質を記述していく
     // インスペクタにアクセサリみたいな感じで振る舞いを追加していく感じにしたい

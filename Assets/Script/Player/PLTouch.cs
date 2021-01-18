@@ -16,7 +16,7 @@ public class PLTouch : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
-        var touchable = col.gameObject.GetComponent<ITouchable>();
+        var touchable = col.gameObject.GetComponent<IPlayerTouchable>();
         if (touchable != null)
         {
             touchable.touchPlayer(state);

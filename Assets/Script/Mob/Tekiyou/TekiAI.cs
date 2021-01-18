@@ -9,7 +9,8 @@ public class TekiAI : KeyPad
     //視野となるRayを飛ばして、Objectを取得、状況に応じてKeyPadを操作
     //知覚情報はTekiStateから色々する
 
-    //TekiTacticsでゴリゴリやると思った？残念！攻撃の間隔だけで充分なのでした！
+    //現在時間でTacticsを切り替えて行動している
+    //距離によって判断を変えたさもある
     //敵は武器で変わるから弾幕撃つ武器用意すればそれで大丈夫説ある
 
     [SerializeField] private TekiState state;

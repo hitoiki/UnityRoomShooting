@@ -6,7 +6,7 @@ public class PlayerBullet : Bullet
 {
     private void OnCollisionEnter2D(Collision2D col)
     {
-        var touchable = col.gameObject.GetComponent<ITouchable>();
+        var touchable = col.gameObject.GetComponent<IBulletTouchable>();
         if (touchable != null)
         {
             touchable.touchBullet(this);

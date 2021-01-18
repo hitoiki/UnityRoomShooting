@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TekiTouch : MonoBehaviour, ITouchable
+public class TekiTouch : MonoBehaviour, IBulletTouchable, IPlayerTouchable
 {
     [SerializeField] private TekiState state;
     [SerializeField] private Rigidbody2D rb;
@@ -20,7 +20,7 @@ public class TekiTouch : MonoBehaviour, ITouchable
 
     public void touchBullet(Bullet b)
     {
-        Debug.Log(b.weaponState.weaponName);
+        //Debug.Log(b.weaponState.weaponName);
         state.Damage(b.weaponState.damage);
         b.gameObject.SetActive(false);
     }
