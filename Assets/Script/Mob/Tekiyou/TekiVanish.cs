@@ -7,7 +7,7 @@ public class TekiVanish : MonoBehaviour
 {
     [SerializeField] TekiState state = null;
     [SerializeField] DropWeapon drop = null;
-    [SerializeField] Effecter effecter = null;
+    [SerializeField] EffectDealer effector = null;
     void Start()
     {
         if (state == null) state = GetComponent<TekiState>();
@@ -16,8 +16,13 @@ public class TekiVanish : MonoBehaviour
         {
             if (mode == TekiMode.dead)
             {
-                if (drop != null) Instantiate(drop, state.rb.position, Quaternion.identity).ChangeWeapon(state.weapon.Value);
-                if (state != null) effecter.SparkScatt(state.rb.position);
+                if (drop != null)
+                {
+                    DropWeapon d = Instantiate(drop, state.rb.position, Quaternion.identity);
+                    d.ChangeWeapon(state.weapon.Value);
+                    d.ChangeEffector(effector);
+                }
+                if (state != null) effector.SparkScatt(state.rb.position);
                 this.gameObject.SetActive(false);
             }
         }

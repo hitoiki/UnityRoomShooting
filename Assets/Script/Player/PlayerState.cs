@@ -64,6 +64,15 @@ public class PlayerState : MonoBehaviour
         }
     }
 
+    public void AddAmmo(int n)
+    {
+        if (playerMode == PlayerMode.alive)
+        {
+            _ammo.Value += n;
+            if (_ammo.Value <= 0) _ammo.Value = 0;
+        }
+    }
+
     public void ChangeWeapon(Weapon w)
     {
         _weapon.Value = w;

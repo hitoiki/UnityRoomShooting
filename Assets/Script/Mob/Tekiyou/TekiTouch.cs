@@ -22,6 +22,5 @@ public class TekiTouch : MonoBehaviour, IBulletTouchable, IPlayerTouchable
     {
         //Debug.Log(b.weaponState.weaponName);
         state.Damage(b.weaponState.damage);
-        b.gameObject.SetActive(false);
     }
 }

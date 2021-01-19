@@ -14,7 +14,7 @@ public class EditableTeki : MonoBehaviour, IBulletTouchable, IPlayerTouchable
         子クラスに実装するのでなく、参照だけ持たせる事
     */
     Rigidbody2D rb;
-    public Effecter sparker;
+    public EffectDealer sparker;
     public GameDataLog DataLog;
     public int id;
 

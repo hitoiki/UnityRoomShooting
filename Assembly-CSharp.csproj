@@ -41,7 +41,7 @@
      <Compile Include="Assets\Script\Dealer\TimeDealer.cs" />
      <Compile Include="Assets\Script\Dealer\UIWriter.cs" />
      <Compile Include="Assets\Script\Dealer\Weather.cs" />
-     <Compile Include="Assets\Script\Effect\Effecter.cs" />
+     <Compile Include="Assets\Script\Effect\EffectDealer.cs" />
      <Compile Include="Assets\Script\Effect\ItemGem.cs" />
      <Compile Include="Assets\Script\InterFace\IActionable.cs" />
      <Compile Include="Assets\Script\InterFace\ITouchable.cs" />
@@ -65,9 +65,10 @@
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiState.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiTouch.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiVanish.cs" />
-     <Compile Include="Assets\Script\Player\KeyPad.cs" />
-     <Compile Include="Assets\Script\Player\Keyboard.cs" />
-     <Compile Include="Assets\Script\Player\KeyboardMark2.cs" />
+     <Compile Include="Assets\Script\Player\KeyPad\KeyPad.cs" />
+     <Compile Include="Assets\Script\Player\KeyPad\Keyboard.cs" />
+     <Compile Include="Assets\Script\Player\KeyPad\KeyboardMark2.cs" />
+     <Compile Include="Assets\Script\Player\PLEffector.cs" />
      <Compile Include="Assets\Script\Player\PLMenu.cs" />
      <Compile Include="Assets\Script\Player\PLMove.cs" />
      <Compile Include="Assets\Script\Player\PLShot.cs" />

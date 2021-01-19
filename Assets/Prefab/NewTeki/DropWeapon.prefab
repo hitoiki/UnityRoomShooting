@@ -225,6 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameWriter: {fileID: 1988406662973885373}
   dropWeapon: {fileID: 11400000, guid: 1715da9efeddce44c8ed946cc2f863d3, type: 2}
+  effector: {fileID: 0}
 --- !u!1 &9185082525117487833
 GameObject:
   m_ObjectHideFlags: 0

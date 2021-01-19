@@ -29,7 +29,6 @@ public class TekiAI : KeyPad
         var inTheHands = Physics2D.CircleCastAll(state.transform.position, state.sight.Value, Vector2.zero).Select(x => x.collider.GetComponent<PlayerState>());
         if (inTheHands.Any(x => x != null))
         {
-            Debug.Log("ThereIsAny");
             targetPlayer = inTheHands.Where(x => x != null).First();
             if (orderingTime < orderList[nowOrder].time)
             {

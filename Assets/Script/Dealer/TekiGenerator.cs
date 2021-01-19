@@ -9,8 +9,17 @@ public class TekiGenerator : MonoBehaviour
     public float spownBure;
     private float timer;
 
-    public Effecter effecter;
+    public EffectDealer effector = null;
+    public GameDataLog dataLog = null;
+    private List<ObjectFlyer<TekiState>> flyers = null;
 
-    public GameDataLog dataLog;
+    void Start()
+    {
+
+    }
+    void Spown(Vector3 spownPoint, int spownNumber)
+    {
+        var newTeki = flyers[spownNumber].GetMob(spownPoint, (x => { }), (x => { x.Init(); }));
+    }
 
 }

@@ -10,7 +10,7 @@ public class TekiGene : MonoBehaviour
     public float spownBure;
     private float timer;
 
-    public Effecter effecter;
+    public EffectDealer effecter;
 
     public GameDataLog dataLog;
 

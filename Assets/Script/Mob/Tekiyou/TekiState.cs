@@ -33,6 +33,10 @@ public class TekiState : MonoBehaviour
 
     private void Awake()
     {
+        Init();
+    }
+    public void Init()
+    {
         _hp.Value = setHp;
         shootinginterval.Value = setShootingInterval;
         _speed.Value = setSpeed;

@@ -7,16 +7,23 @@ public class DropWeapon : MonoBehaviour, IActionable
 {
     public Text nameWriter;
     public Weapon dropWeapon;
+    public EffectDealer effector;
 
     private void Awake()
     {
         if (dropWeapon == null) dropWeapon = GetComponent<Weapon>();
+        if (effector == null) effector = GetComponent<EffectDealer>();
         nameWriter.text = dropWeapon.weaponState.weaponName;
     }
-    public void ChangeWeapon(Weapon w)
+    public virtual void ChangeWeapon(Weapon w)
     {
         dropWeapon = w;
         nameWriter.text = dropWeapon.weaponState.weaponName;
+    }
+
+    public void ChangeEffector(EffectDealer e)
+    {
+        effector = e;
     }
     public void actionPlayer(PlayerState p)
     {

@@ -34,7 +34,7 @@ public class PLMove : MonoBehaviour
         {
             if (boo && state.playerMode == PlayerMode.alive)
             {
-                var inTheHands = Physics2D.CircleCastAll(playerRb.position, state.hands.Value, Vector2.zero).Select(x => x.collider.GetComponent<IActionable>());
+                var inTheHands = Physics2D.CircleCastAll(playerRb.position, state.hands.Value, Vector2.zero).Select(x => x.collider.GetComponent<IActionable>()).Where(x => x != null);
                 if (inTheHands.Any(x => x != null)) inTheHands.Where(x => x != null).First().actionPlayer(state);
             }
         }

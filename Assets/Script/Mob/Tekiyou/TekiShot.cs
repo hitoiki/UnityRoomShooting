@@ -7,7 +7,7 @@ public class TekiShot : MonoBehaviour
 {
     [SerializeField] private KeyPad keyPad;
     [SerializeField] private Rigidbody2D tekiRb;
-    [SerializeField] private Effecter sparker;
+    [SerializeField] private EffectDealer sparker;
     [SerializeField] private GameDataLog DataLog;
     [SerializeField] private TekiState state;
     private ObjectFlyer<Bullet> magazine;
