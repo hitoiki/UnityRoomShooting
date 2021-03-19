@@ -9,6 +9,6 @@ public class StartButton : MonoBehaviour
     public void OnClick()
     {
         Debug.Log("押された!");
-        SceneManager.LoadScene("protoshooting");
+        SceneManager.LoadScene("Mark2");
     }
 }

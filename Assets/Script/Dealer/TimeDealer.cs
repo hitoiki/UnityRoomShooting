@@ -6,13 +6,13 @@ using UniRx;
 
 public class TimeDealer : MonoBehaviour
 {
-    public GameDataLog datalog;
+    public GameState datalog;
 
     private void Start()
     {
         datalog.nowGameMode.Subscribe(x =>
         {
-            if (x == GameDataLog.GameMode.gameover)
+            if (x != modeEnum.alive)
             {
                 Time.timeScale = 0;
             }

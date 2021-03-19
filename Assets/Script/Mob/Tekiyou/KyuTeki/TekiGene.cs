@@ -12,7 +12,7 @@ public class TekiGene : MonoBehaviour
 
     public EffectDealer effecter;
 
-    public GameDataLog dataLog;
+    public GameState dataLog;
 
     public List<EditableTeki> objPool;
     EditableTeki GetObject()

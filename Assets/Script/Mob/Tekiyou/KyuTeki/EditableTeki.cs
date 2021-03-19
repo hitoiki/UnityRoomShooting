@@ -15,7 +15,7 @@ public class EditableTeki : MonoBehaviour, IBulletTouchable, IPlayerTouchable
     */
     Rigidbody2D rb;
     public EffectDealer sparker;
-    public GameDataLog DataLog;
+    public GameState DataLog;
     public int id;
 
     public int dealDamage = 0;

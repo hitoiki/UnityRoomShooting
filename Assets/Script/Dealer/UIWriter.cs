@@ -9,15 +9,20 @@ public class UIWriter : MonoBehaviour
     public Text hpText;
     public Text ammoText;
     public Text scoreText;
+    public GameObject alertAmmo;
     public GameObject gameoverScreen;
 
-    public GameDataLog datalog;
+    public GameObject menuScreen;
+
+    public GameState datalog;
+    public PlayerState state;
 
     private void Start()
     {
         datalog.score.Subscribe(x => { scoreText.text = "Score " + x.ToString(); });
-        datalog.state.hp.Subscribe(x => { hpText.text = "HP " + x.ToString(); });
-        datalog.state.ammo.Subscribe(x => { ammoText.text = "Ammo " + x.ToString(); });
-        datalog.nowGameMode.Subscribe(x => { if (x == GameDataLog.GameMode.gameover) gameoverScreen.SetActive(true); });
+        state.hp.Subscribe(x => { hpText.text = "HP " + x.ToString(); });
+        state.ammo.Subscribe(x => { ammoText.text = "Ammo " + x.ToString(); alertAmmo.SetActive(x <= 0); });
+        datalog.nowGameMode.Subscribe(x => { if (x == modeEnum.gameover) gameoverScreen.SetActive(true); });
+        datalog.nowGameMode.Subscribe(x => { menuScreen.SetActive(x == modeEnum.menu); });
     }
 }

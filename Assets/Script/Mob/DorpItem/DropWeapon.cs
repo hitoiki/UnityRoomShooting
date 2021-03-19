@@ -25,7 +25,7 @@ public class DropWeapon : MonoBehaviour, IActionable
     {
         effector = e;
     }
-    public void actionPlayer(PlayerState p)
+    public virtual void actionPlayer(PlayerState p)
     {
         Debug.Log("taked");
         Weapon buf = p.weapon.Value;

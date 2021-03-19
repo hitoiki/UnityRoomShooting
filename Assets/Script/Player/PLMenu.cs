@@ -1,26 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class PLMenu : MonoBehaviour
 {
-    bool isPose = false;
+    //GameDataLogとPlayerModeを同期させるだけ
+    [SerializeField] private PlayerState state = null;
+    [SerializeField] private GameState mode = null;
+    private PlayerMode modeBeforePose;
 
-    private void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (state == null) state = GetComponent<PlayerState>();
+        mode.nowGameMode.Subscribe(x =>
         {
-            if (!isPose)
+            if (x == modeEnum.menu)
             {
-                Time.timeScale = 0f;
+                modeBeforePose = state.playerMode;
+                state.playerMode = PlayerMode.pose;
             }
             else
             {
-                Time.timeScale = 1f;
+                state.playerMode = modeBeforePose;
             }
-            Debug.Log("Called");
-            isPose = !isPose;
-        }
-
+        });
     }
 }

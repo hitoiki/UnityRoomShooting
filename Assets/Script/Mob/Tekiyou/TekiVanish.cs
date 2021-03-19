@@ -5,9 +5,10 @@ using UniRx;
 
 public class TekiVanish : MonoBehaviour
 {
+
+    //汎用性が無さすぎるので改造しなおしたい
     [SerializeField] TekiState state = null;
     [SerializeField] DropWeapon drop = null;
-    [SerializeField] EffectDealer effector = null;
     void Start()
     {
         if (state == null) state = GetComponent<TekiState>();
@@ -20,9 +21,7 @@ public class TekiVanish : MonoBehaviour
                 {
                     DropWeapon d = Instantiate(drop, state.rb.position, Quaternion.identity);
                     d.ChangeWeapon(state.weapon.Value);
-                    d.ChangeEffector(effector);
                 }
-                if (state != null) effector.SparkScatt(state.rb.position);
                 this.gameObject.SetActive(false);
             }
         }

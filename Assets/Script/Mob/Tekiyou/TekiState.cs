@@ -15,6 +15,8 @@ public class TekiState : MonoBehaviour
     [SerializeField] int setTouchDamage = 0;
     [SerializeField] Weapon setWeapon = null;
 
+    [SerializeField] public int getScore = 0;
+
     private ReactiveProperty<int> _hp = new ReactiveProperty<int>();
     public IReadOnlyReactiveProperty<int> hp => _hp;
     public ReactiveProperty<float> shootinginterval { get; set; } = new ReactiveProperty<float>();

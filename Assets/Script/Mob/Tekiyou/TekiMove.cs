@@ -20,8 +20,7 @@ public class TekiMove : MonoBehaviour
     */
     [SerializeField] private KeyPad keyPad;
     [SerializeField] private Rigidbody2D tekiRb;
-    [SerializeField] private EffectDealer sparker;
-    [SerializeField] private GameDataLog DataLog;
+    [SerializeField] private GameState DataLog;
     [SerializeField] private TekiState state;
     private Vector2 latestInput;
 

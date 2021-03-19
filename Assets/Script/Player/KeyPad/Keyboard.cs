@@ -25,4 +25,9 @@ public class Keyboard : KeyPad
         AimDirection.Value = Vector2.right;
     }
 
+    protected override void UnTimedKeyPadCheck()
+    {
+        MenuKey.Value = Input.GetKeyDown(KeyCode.Escape);
+    }
+
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
     weaponName: shuriken
     speed: 5
     range: 7
-    damage: 1
+    damage: 3
     AmmoParShot: 0
     shotInterval: 0.25
   playerBullet: {fileID: 4322249545970892116, guid: 36f4e3e7076f43a42a1f32d61e15c633,

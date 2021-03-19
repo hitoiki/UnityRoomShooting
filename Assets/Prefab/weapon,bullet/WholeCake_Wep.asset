@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c80e55ac72bc4da2a39d0a5f7cdb4, type: 3}
+  m_Name: WholeCake_Wep
+  m_EditorClassIdentifier: 
+  weaponState:
+    weaponName: WholeCake
+    speed: 4
+    range: 11
+    damage: 5
+    AmmoParShot: 20
+    shotInterval: 0.6
+  playerBullet: {fileID: 2684118640126558938, guid: f44c86ec3feb56a43b9c225f80f4f975,
+    type: 3}
+  enemyBullet: {fileID: 9166969621975052219, guid: e029e3c591333cb4c96556543a5e0069,
+    type: 3}

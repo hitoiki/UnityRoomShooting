@@ -36,16 +36,27 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\Dealer\GameDataLog.cs" />
-     <Compile Include="Assets\Script\Dealer\TekiGenerator.cs" />
+     <Compile Include="Assets\Prefab\Tactics\Script\Tactics.cs" />
+     <Compile Include="Assets\Prefab\Tactics\Script\TacticsArrow.cs" />
+     <Compile Include="Assets\Prefab\Tactics\Script\TacticsHanyo.cs" />
+     <Compile Include="Assets\Prefab\Tactics\Script\TacticsIdling.cs" />
+     <Compile Include="Assets\Runtime\SubclassSelectorAttribute.cs" />
+     <Compile Include="Assets\Script\Dealer\DestroyReport.cs" />
+     <Compile Include="Assets\Script\Dealer\GameModeDealer.cs" />
+     <Compile Include="Assets\Script\Dealer\GameState.cs" />
+     <Compile Include="Assets\Script\Dealer\Generater\Generatable.cs" />
+     <Compile Include="Assets\Script\Dealer\Generater\GeneratorDealer.cs" />
+     <Compile Include="Assets\Script\Dealer\Generater\TekiGenerator.cs" />
      <Compile Include="Assets\Script\Dealer\TimeDealer.cs" />
      <Compile Include="Assets\Script\Dealer\UIWriter.cs" />
-     <Compile Include="Assets\Script\Dealer\Weather.cs" />
+     <Compile Include="Assets\Script\Dealer\WeatherDealer.cs" />
+     <Compile Include="Assets\Script\Effect\Blinker.cs" />
      <Compile Include="Assets\Script\Effect\EffectDealer.cs" />
      <Compile Include="Assets\Script\Effect\ItemGem.cs" />
      <Compile Include="Assets\Script\InterFace\IActionable.cs" />
      <Compile Include="Assets\Script\InterFace\ITouchable.cs" />
-     <Compile Include="Assets\Script\Mob\DorpItem\DropItem.cs" />
+     <Compile Include="Assets\Script\Mob\DorpItem\DropItemWithGem.cs" />
+     <Compile Include="Assets\Script\Mob\DorpItem\DropPack.cs" />
      <Compile Include="Assets\Script\Mob\DorpItem\DropRelics.cs" />
      <Compile Include="Assets\Script\Mob\DorpItem\DropWeapon.cs" />
      <Compile Include="Assets\Script\Mob\DorpItem\PushedByBullet.cs" />
@@ -55,11 +66,10 @@
      <Compile Include="Assets\Script\Mob\Tekiyou\KyuTeki\Teki.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\KyuTeki\TekiGene.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\KyuTeki\Wave.cs" />
-     <Compile Include="Assets\Script\Mob\Tekiyou\Tactics\Tactics.cs" />
-     <Compile Include="Assets\Script\Mob\Tekiyou\Tactics\TacticsHanyo.cs" />
-     <Compile Include="Assets\Script\Mob\Tekiyou\Tactics\TacticsIdling.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiAI.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiKomono\HPbar.cs" />
+     <Compile Include="Assets\Script\Mob\Tekiyou\TekiKomono\TekiGifting.cs" />
+     <Compile Include="Assets\Script\Mob\Tekiyou\TekiKomono\TekiPoison.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiMove.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiShot.cs" />
      <Compile Include="Assets\Script\Mob\Tekiyou\TekiState.cs" />

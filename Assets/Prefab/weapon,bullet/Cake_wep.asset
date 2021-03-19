@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c80e55ac72bc4da2a39d0a5f7cdb4, type: 3}
+  m_Name: Cake_wep
+  m_EditorClassIdentifier: 
+  weaponState:
+    weaponName: Cake
+    speed: 5
+    range: 7
+    damage: 3
+    AmmoParShot: 5
+    shotInterval: 0.25
+  playerBullet: {fileID: 7273100732242686676, guid: ddee41ca7018f9b478a4f8c611d1906e,
+    type: 3}
+  enemyBullet: {fileID: 9072919145097186987, guid: 5db8d753d8bb7a844bfddb5df40df4e2,
+    type: 3}

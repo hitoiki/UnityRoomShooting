@@ -74,15 +74,14 @@ package Enemy{
 }
 
 package GameDealer{
-    class datalog
-    class gameFlowDealer
+    class GameMode
     class UIWriter
+    class GameModeDealer
 
-    PlayerState <-Up- datalog : ob
-    datalog <-up- UIWriter : ob
-    datalog <- gameFlowDealer : ob
+    GameMode <-up- UIWriter : ob
+    GameMode <-up- GameModeDealer
 
-    PlayerState <- gameFlowDealer : ob
+    PlayerState <--up- GameModeDealer : ob
 
 }
 
